@@ -1,0 +1,26 @@
+{
+  "name": "gulp-demo",
+  "version": "1.0.0",
+  "description": "gulp demo",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "NARUTOne",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-clean-css": "^3.0.4",
+    "gulp-concat": "^2.6.1",
+    "gulp-imagemin": "^3.2.0",
+    "gulp-less": "^3.3.0",
+    "gulp-livereload": "^3.8.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^2.1.2"
+  },
+  "dependencies": {
+    "del": "^2.2.2",
+    "gulp-cache": "^0.4.6",
+    "gulp-notify": "^3.0.0"
+  }
+}

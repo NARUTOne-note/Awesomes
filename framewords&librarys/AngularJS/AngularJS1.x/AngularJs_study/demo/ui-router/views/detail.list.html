@@ -1,0 +1,16 @@
+<table>
+				<thead>
+					<tr>
+						<td>姓名</td>
+						<td>性别</td>
+						<td>年龄</td>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat='item in arrList'>
+						<td>{{item.name}}</td>
+						<td>{{item.sex?'男':'女'}}</td>
+						<td>{{item.age | number:2}}</td>
+					</tr>
+				</tbody>
+			</table>

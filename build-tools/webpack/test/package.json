@@ -1,0 +1,44 @@
+{
+  "name": "wuzhong",
+  "version": "1.0.0",
+  "description": "webpackのsyudy",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack",
+    "dev": "webpack-dev-server --devtool eval --progress --colors --hot --content-base build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://git.baifendian.com/ManyEdge/webpackTest.git"
+  },
+  "keywords": [
+    "webpack"
+  ],
+  "author": "wuzhong",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^6.4.0",
+    "babel-core": "^6.13.2",
+    "babel-loader": "^6.2.5",
+    "babel-plugin-transform-runtime": "^6.12.0",
+    "babel-preset-es2015": "^6.13.2",
+    "babel-preset-react": "^6.11.1",
+    "babel-preset-stage-0": "^6.5.0",
+    "css-loader": "^0.23.1",
+    "file-loader": "^0.9.0",
+    "less-loader": "^2.2.3",
+    "postcss-loader": "^0.10.1",
+    "style-loader": "^0.13.1",
+    "url-loader": "^0.5.7",
+    "webpack": "^1.13.2"
+  },
+  "dependencies": {
+    "babel-polyfill": "^6.13.0",
+    "babel-runtime": "^6.11.6",
+    "less": "^2.7.1",
+    "react": "^15.3.1",
+    "react-dom": "^15.3.1",
+    "webpack-dev-server": "^1.14.1"
+  }
+}

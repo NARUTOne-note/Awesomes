@@ -1,0 +1,10 @@
+img {
+  margin-top: 15px;
+  border: 1px solid #428BCA;
+  width: 160px;
+  height: 160px;
+  border-radius: 100px;
+}
+.div-center > div {
+  margin-top: 12px;
+}

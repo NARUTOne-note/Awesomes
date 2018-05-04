@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="https://unpkg.com/vue"></script>
+	<script src="https://cdn.jsdelivr.net/npm/axios@0.12.0/dist/axios.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/lodash@4.13.1/lodash.min.js"></script>
+</head>
+<body>
+	<div id="app">
+		<input v-model="message" placeholder="edit me">
+		<p>Message is: {{ message }}</p>
+		<span>Multiline message is:</span>
+		<p style="white-space: pre-line;">{{ message2 }}</p>
+		<br>
+		<textarea v-model="message2" placeholder="add multiple lines"></textarea><br/>
+		<input type="checkbox" id="checkbox" v-model="checked">
+		<label for="checkbox">{{ checked }}</label>
+		<div id='example-3'>
+		  <input type="checkbox" id="jack" value="Jack" v-model="checkedNames">
+		  <label for="jack">Jack</label>
+		  <input type="checkbox" id="john" value="John" v-model="checkedNames">
+		  <label for="john">John</label>
+		  <input type="checkbox" id="mike" value="Mike" v-model="checkedNames">
+		  <label for="mike">Mike</label>
+		  <br>
+		  <span>Checked names: {{ checkedNames }}</span>
+		</div>
+		<div id="example-4">
+		  <input type="radio" id="one" value="One" v-model="picked">
+		  <label for="one">One</label>
+		  <br>
+		  <input type="radio" id="two" value="Two" v-model="picked">
+		  <label for="two">Two</label>
+		  <br>
+		  <input type="radio" id="tree" value="tree" v-model="picked">
+		  <label for="tree">tree</label>
+		  <br>
+		  <span>Picked: {{ picked }}</span>
+		</div>
+		<div id="example-5">
+		  <select v-model="selected">
+		    <option disabled value="">请选择</option>
+		    <option>A</option>
+		    <option>B</option>
+		    <option>C</option>
+		  </select>
+		  <span>Selected: {{ selected }}</span>
+		</div>
+		<div id="example-6">
+		  <select v-model="selecteds" multiple style="width: 50px;">
+		    <option>A</option>
+		    <option>B</option>
+		    <option>C</option>
+		  </select>
+		  <br>
+		  <span>Selecteds: {{ selecteds }}</span>
+		  <select v-model="selected2">
+			  <option v-for="option in options" v-bind:value="option.value">
+			    {{ option.text }}
+			  </option>
+			</select>
+			<span>Selected: {{ selected2 }}</span>
+		</div>
+		<input
+		  type="checkbox"
+		  v-model="toggle"
+		  true-value="yes"
+		  false-value="no"
+		>
+		<input type="radio" v-model="pick" v-bind:value="picka" />
+	</div>	
+</body>
+<script>
+	// start vue
+  var app = new Vue({
+    el: '#app',
+    data: {
+      message: 'Hello Vue!',
+      message2: 'Hello Vue!',
+      checked: false,
+      checkedNames: [],
+      picked: [],
+      selected: '',
+      selecteds: [],
+      selected2: 'A',
+	    options: [
+	      { text: 'One', value: 'A' },
+	      { text: 'Two', value: 'B' },
+	      { text: 'Three', value: 'C' }
+	    ],
+	    toggle: 'no',
+	    picka: 'same',
+	    pick: ''
+    },
+    watch: {
+      toggle: function(val) {
+        console.log(val);
+      },
+      pick: function(val) {
+        console.log(this.pick == this.picka);
+      }
+    }
+  });
+
+  /**
+   * 修饰符
+   * 1、.lazy
+   * <!-- 在“change”时而非“input”时更新 -->
+			<input v-model.lazy="msg" >
+
+		2、 .number
+		自动将用户的输入值转为数值类型
+		<input v-model.number="age" type="number">
+
+		3、 .trim
+		自动过滤用户输入的首尾空白字符
+		<input v-model.trim="msg">
+   */
+
+</script>
+</html>

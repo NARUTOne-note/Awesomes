@@ -1,0 +1,17 @@
+.css {
+	color: #e4393c;
+	padding-left: 100px;
+	background: url('~public/imgs/me.png') no-repeat left center;
+	background-size: 100px;
+}
+
+p {
+	color: #333;
+}
+
+img {
+	width: 600px;
+	height: 300px;
+	vertical-align: middle;
+}
+

@@ -1,0 +1,5 @@
+*.zip
+*.rar
+*.log
+.svn
+node_modules

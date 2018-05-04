@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+	<div id="app">
+		<currency-input v-model="someText"></currency-input>
+		<p>{{ someText }}</p>
+		<component v-bind:is="viewComponent" :text='someText' @add='parentFun'>
+			<h3 class="title" slot="title">card title</h3>
+		</component>
+		<button @click="changeComponent">动态挂载组件</button>
+	</div>
+</body>
+<script>
+	// components	
+	Vue.component('currency-input', {
+		template: '\
+		<span>\
+		 $\
+		 <input\
+		 	ref="input"\
+      v-bind:value="value"\
+      v-on:input="updateValue($event.target.value)"\
+      >\
+		</span>',
+		props: ['value'],
+		methods: {
+			// 更新值
+	    updateValue: function (value) {
+	      // 通过 input 事件带出数值
+	      this.$emit('input', value)
+	    }
+		}
+	});
+
+	var Card = {
+		template: '<div class="card"><div><slot name="title"/></div><p>{{ text }}</p><button @click="outputClick()">输出</button></div>',
+		props:{
+			text: {
+				type: String,
+				default: ''
+			}
+		},
+		methods: {
+			outputClick: function() {
+				alert(this.text);
+			}
+		}
+	}
+	var Dcard = {
+		template: '<div><span class="Dcard" v-text="text"></span><br/><button @click="childFun()">add</button></div>',
+		props: ['text'],
+		data: function () {
+			return {
+				count: 0
+			}
+		},
+		methods: {
+			childFun: function () {
+				this.count++
+				this.$emit('add', this.count)
+			}
+		}
+	}
+	
+	// 创建根实例
+	new Vue({
+	  el: '#app',
+	  data: {
+	  	someText: '',
+	  	viewComponent: 'Card',
+	  	count: 0
+	  },
+	  components: {
+	  	'Card': Card,
+	  	'Dcard': Dcard
+	  },
+	  methods: {
+	  	changeComponent: function () {
+	  		this.viewComponent == 'Card' ? this.viewComponent = 'Dcard' : this.viewComponent = 'Card';
+	  	},
+	  	parentFun: function (data) {
+	  		alert(data)
+	  	}
+	  }
+	});
+
+</script>
+</html>

@@ -1,0 +1,17 @@
+{
+  "name": "wz",
+  "version": "1.0.0",
+  "description": "mockJS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "mock"
+  ],
+  "author": "narutone",
+  "license": "ISC",
+  "devDependencies": {
+    "mockjs": "^1.0.1-beta3"
+  }
+}

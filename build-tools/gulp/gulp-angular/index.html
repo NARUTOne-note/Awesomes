@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" data-ng-app="myApp">
+<head>
+<meta charset="utf-8">
+  <title>Angular UI Router</title>
+  <!-- bower:css -->
+  <!-- endinject -->
+
+  <!-- inject:css -->
+  <link rel="stylesheet" href="build/all.min.css">
+  <!-- endinject -->
+</head>
+
+<body>
+  <a ui-sref="home">Home</a>
+  <a ui-sref="page1">page1</a>
+  <a ui-sref="page2">page2</a>
+  <div id='app'>
+  	<div ui-view class='demo-content'></div>
+  </div>
+
+  <!-- bower:js -->
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+  <!-- endinject -->
+
+  <!-- inject:js -->
+  <script src="build/all.js"></script>
+  <!-- endinject -->
+</body>
+</html>

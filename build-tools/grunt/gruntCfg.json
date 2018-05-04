@@ -1,0 +1,22 @@
+{
+  "requirejs": {
+    "main": {
+      "options": {
+        "baseUrl": "",
+        "paths": {
+          "$": "src/zepto",
+          "_": "src/app",
+          "B": "src/web"
+        },
+        "web": {
+          "include": [
+            "$",
+            "_",
+            "B"
+          ],
+          "out": "dest/libsReq.js"
+        }
+      }
+    }
+  }
+}
