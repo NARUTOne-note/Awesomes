@@ -11,6 +11,7 @@
 ![](https://raw.githubusercontent.com/NARUTOne/resources-github/master/imgs/react/react-life.png)
 
 - [React组件的生命周期](https://github.com/chemdemo/chemdemo.github.io/issues/14)
+- [React 应用架构设计](https://mp.weixin.qq.com/s/cI26iodw302vyRzl3XGyGQ)
 
 ### 组件通信
 
