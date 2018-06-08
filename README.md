@@ -6,6 +6,7 @@
 ## React
 - [bfd-ui](http://ui.baifendian.com/)
 - [Ant-design](https://ant.design/index-cn)
+- [ice飞冰](https://alibaba.github.io/ice/)
 - [RSUITE](https://rsuitejs.com/getting-started)
 - [zanUI](https://www.youzanyun.com/zanui)
 
