@@ -15,4 +15,4 @@
 - [vue组件模板](https://segmentfault.com/q/1010000010775587)
 - [parcel-vue](https://github.com/cheneyweb/parcel-vue)
 - [vue 双向绑定模拟](https://mp.weixin.qq.com/s/MGsEGejaADVHGlZFYQgCnQ)
-
+- [vue computed解析](https://juejin.im/post/5a759ddbf265da4e9267fee0)
