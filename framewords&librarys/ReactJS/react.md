@@ -11,6 +11,7 @@
 ![](https://raw.githubusercontent.com/NARUTOne/resources-github/master/imgs/react/react-life.png)
 
 - [React组件的生命周期](https://github.com/chemdemo/chemdemo.github.io/issues/14)
+- [React 性能优化大挑战：一次理解 Immutable data 跟 shouldComponentUpdate](http://web.jobbole.com/93614/)
 
 ### 组件通信
 
