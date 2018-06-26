@@ -12,7 +12,27 @@
 <body>
   <div class="demo-box">
 		<div class="demo-content">
-			
+			<div id="app">
+        <input type="text" v-model="name">
+        <div>
+            <div>
+                <div>
+                    <div>
+                        <div>
+                            <h3>v-bind形式：</h3>
+                            <h3 v-bind="name">dom 深度遍历</h3>
+                            <h3>{{}}}形式：</h3>
+                            <h3>{{ name }}</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <input type="text" v-model="testData1">
+        <h3>{{ testData1 }}</h3>
+        <input type="text" v-model="testData2">
+        <h3>{{ testData2 }}</h3>
+      </div>
 		</div>
 	</div>
 </body>
