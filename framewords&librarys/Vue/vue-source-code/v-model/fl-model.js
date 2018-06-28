@@ -1,5 +1,6 @@
 /**
  * v-model, 双向数据绑定
+ * ! vue mvvc
  */
 
 // mvvm入口函数  用于整合 数据监听器_observer、 指令解析器_compile、连接Observer和Compile的_watcherTpl
