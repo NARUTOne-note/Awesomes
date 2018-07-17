@@ -4,11 +4,17 @@
 
 ## 生命周期
 
-![](https://raw.githubusercontent.com/NARUTOne/resources-github/master/imgs/vue/lifecycle.png)
+![生命周期](https://raw.githubusercontent.com/NARUTOne/resources-github/master/imgs/vue/lifecycle.png)
 
 ## 组件通信
 
-![](https://raw.githubusercontent.com/NARUTOne/resources-github/master/imgs/vue/props-events.png)
+![组件通信](https://raw.githubusercontent.com/NARUTOne/resources-github/master/imgs/vue/props-events.png)
+
+## HOC
+
+> 高阶组件
+
+[HOC(高阶组件)在vue中的应用](https://github.com/coolriver/coolriver-site/blob/master/markdown/vue-mixin-hoc.md)
 
 ## 小记
 
