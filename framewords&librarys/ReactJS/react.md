@@ -12,6 +12,7 @@
 
 - [React组件的生命周期](https://github.com/chemdemo/chemdemo.github.io/issues/14)
 - [React 应用架构设计](https://mp.weixin.qq.com/s/cI26iodw302vyRzl3XGyGQ)
+- [React 性能优化大挑战：一次理解 Immutable data 跟 shouldComponentUpdate](http://web.jobbole.com/93614/)
 
 ### 组件通信
 

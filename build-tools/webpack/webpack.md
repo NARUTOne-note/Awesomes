@@ -25,3 +25,9 @@
 ## webpack 打包示例
 
 - [webpack整体的配置](https://gist.github.com/gwuhaolin/cebd252a23793e742e6acae90ab63e83)
+
+## webpack 更新
+
+### 4.x
+
+- [Optimizing front-end delivery with Webpack 4](https://dev.to/jesalg/optimizing-front-end-delivery-with-webpack-4-1mm4)
