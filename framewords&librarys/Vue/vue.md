@@ -1,6 +1,7 @@
 # vue 
 
-[Vue 2.0——渐进式前端解决方案](http://www.infoq.com/cn/articles/vue-2-progressive-front-end-solution)
+* [Vue 2.0——渐进式前端解决方案](http://www.infoq.com/cn/articles/vue-2-progressive-front-end-solution)
+* [Vue 项目架构设计与工程化实践](https://mp.weixin.qq.com/s/5tAfmFCXkRflvqTmmwUE6g)
 
 ## 生命周期
 
