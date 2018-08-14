@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://rawgit.com/NARUTOne/resources-github/master/demo/demo-theme.css">
+  <script src="https://gw.alipayobjects.com/os/antv/assets/g6/2.0.0/g6.js"></script>
+  <title>Document</title>
+  <style>
+    .base-chart {
+      height: 50vh;
+      background-color: #F6F8FA;
+    }
+  </style>
+</head>
+<body>
+  <div class="demo-box">
+    <div class="demo-content">
+      <h2 class="demo-title">G6 教程 —— 事件交互</h2>
+      <button id="changeMode" class="btn btn-primary">切换模式</button>
+      <div id="mountNode" class="base-chart"></div>
+      <div class="demo-doc">
+        <div class="doc-line doc-default">G6 是关系数据可视化引擎，开发者可以基于 G6 拓展出属于自己的图分析应用或者图编辑器应用。</div>
+      </div>
+    </div>
+  </div>
+</body>
+<script>
+// 注册鼠标进入节点变红的行为
+G6.registerBehaviour('mouseEnterFillRed', graph=>{
+  graph.behaviourOn('node:mouseenter', ev=>{
+    graph.update(ev.item, {
+      color: 'red'
+    });
+  });
+});
+
+// 注册鼠标进入节点变绿的行为
+G6.registerBehaviour('mouseEnterFillGreen', graph=>{
+  graph.behaviourOn('node:mouseenter', ev=>{
+    graph.update(ev.item, {
+      color: 'green'
+    });
+  });
+});
+
+// 注册鼠标移出节点变原色的行为
+G6.registerBehaviour('mouseLeaveResetFill', graph=>{
+  graph.behaviourOn('node:mouseleave', ev=>{
+    graph.update(ev.item, {
+      color: '#2f54eb'
+    });
+  });
+});
+const data = {
+  nodes: [{
+    id: '事件',
+    x: 80,
+    y: 150,
+  },{
+    id: '行为',
+    x: 200,
+    y: 150
+  },{
+    id: '模式',
+    x: 320,
+    y: 150
+  }],
+  edges: [{
+    source: '事件',
+    target: '行为',
+    label: '组成'
+  },{
+    source: '行为',
+    target: '模式',
+    label: '组成'
+  }]
+};
+let mode = 'red';
+const graph = new G6.Graph({
+  container: 'mountNode',
+  width: 500,
+  height: 500,
+  modes: {
+    red: ['mouseEnterFillRed', 'mouseLeaveResetFill'],
+    green: ['mouseEnterFillGreen', 'mouseLeaveResetFill']
+  },
+  mode,
+});
+graph.node({
+  label(model) {
+    return model.id;
+  }
+});
+graph.edge({
+  style() {
+    return {
+      endArrow: true
+    };
+  }
+});
+graph.read(data);
+
+// 点击按钮切换模式
+document.getElementById('changeMode').onclick = () => {
+  if(mode === 'red') {
+    graph.changeMode('green');
+    mode = 'green';
+  } else {
+    graph.changeMode('red');
+    mode = 'red';
+  }
+};
+</script>
+</html>

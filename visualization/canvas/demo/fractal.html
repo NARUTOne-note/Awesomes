@@ -1,0 +1,36 @@
+<html>
+<body>
+<canvas id="myCanvas" width="800" height="800"></canvas>
+<script>
+var creal = -.8
+var cimag = .156;
+var canvas = document.getElementById('myCanvas');
+var context = canvas.getContext('2d');
+ 
+for(y=0;y<200;y++)
+{
+  for(x=0;x<200;x++)
+  {
+    var cx=-2+x/50;
+    var cy=-2+y/50;
+    var i = 0;
+
+    do
+    {
+    xt=cx*cx-cy*cy+creal;
+    cy=2*cx*cy+cimag;
+    cx=xt;
+    i++;
+    }
+    while ((cx*cx+cy*cy<4)&&i<255);
+
+    i=i.toString(16);
+    context.beginPath();
+    context.rect(x*4, y*4, 4, 4);
+    context.fillStyle ='#'+i+i+i;
+    context.fill();
+  }
+}
+</script>
+</body>
+</html>
