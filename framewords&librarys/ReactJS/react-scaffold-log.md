@@ -288,3 +288,185 @@ npm i --save-dev copy-webpack-plugin
 ```sh
 npm i --save-dev zip-webpack-plugin
 ```
+
+## 规范
+
+> 代码、样式编码规范，代码简洁易读，提升项目开发效率。:blush:
+
+- [http://eslint.cn/](http://eslint.cn/) : 代码规范
+- [https://stylelint.cn/](https://stylelint.cn/) ： 样式规范
+- [http://editorconfig.org/](http://editorconfig.org/) ： 编码规范
+
+```sh
+npm install babel-eslint eslint-plugin-react eslint stylelint stylelint-config-standard --save-dev
+```
+
+### vscode + eslint
+
+> 自动检测排查，补全修复
+
+```js
+"eslint.autoFixOnSave": true,
+    "eslint.validate": [
+        // "javascript",
+        // "javascriptreact",
+        // "html",
+        // "vue"
+        {
+            "language": "javascript",
+            "autoFix": true
+        },
+        {
+            "language": "javascriptreact",
+            "autoFix": true
+        },
+        {
+            "language": "vue",
+            "autoFix": true
+        },
+        {
+            "language": "jsx",
+            "autoFix": true
+        },
+        {
+            "language": "html",
+            "autoFix": true
+        }
+    ],
+```
+
+### stylelint autofix
+
+> 样式自动修复
+
+```sh
+npm install stylelint-webpack-plugin --save-dev
+```
+
+webpack-config
+
+```js
+new StyleLintPlugin({
+  // 正则匹配想要lint监测的文件
+  files: ['src/**/*.l?(e|c)ss'],
+  cache: true,
+  fix: true
+})
+```
+
+## running
+
+> package.json 配置 script命令
+
+```js
+
+"scripts": {
+  "test": "echo \"Error: no test specified\" && exit 1",
+  "lint": "eslint --ext .js src script config test && npm run lint:style",
+  "lint:fix": "eslint --fix --ext .js src script config test && npm run lint:style",
+  "lint-staged": "lint-staged",
+  "lint-staged:js": "eslint --ext .js",
+  "lint:style": "stylelint \"src/**/*.less\" --syntax less",
+  "start": "node script/server.js", // express server
+  "dev": "node script/dev-server.js", // webpack dev  server
+  "build": "node script/prod.js" // webpack build prod
+}
+
+```
+
+> ☝ 注意 写进package.json中不能带有注释
+
+## 持续集成服务 Travis CI 
+
+> 绑定 Github 上面的项目，只要有新的代码，就会自动抓取。然后，提供一个运行环境，执行测试，完成构建，还能部署到服务器。
+
+- [持续集成服务 Travis CI 教程](http://www.ruanyifeng.com/blog/2017/12/travis_ci_tutorial.html)
+- [https://travis-ci.org/](https://travis-ci.org/)
+
+## React
+
+> 集成React
+
+```sh
+npm i --save react react-dom prop-types
+```
+
+### react-router
+
+> 升级 4.x [https://zhuanlan.zhihu.com/p/27433116](https://zhuanlan.zhihu.com/p/27433116)
+
+[react-router](https://reacttraining.com/)
+[v3 升级 v4](https://blog.csdn.net/chenqiuge1984/article/details/80131519)
+
+```sh
+npm i --save react-router react-router-dom
+
+# 导入 history
+npm i --save history
+```
+
+### redux
+
+> redux数据处理 [https://cn.redux.js.org/](https://cn.redux.js.org/)
+
+```sh
+npm i --save redux react-redux
+```
+
+**react-router-redux**
+这个包的正式版4.x不支持react-router v4。你需要用 alpha 版 的react-router-redux。在package.json 里加入react-router-redux~5.0.0或者用yarn：
+
+```sh
+yarn add react-router-redux@5.0.0
+```
+
+### react应用热更新
+
+```sh
+npm i --save-dev react-hot-loader
+```
+
+```js
+import React from 'react';
+import { render, unmountComponentAtNode } from 'react-dom';
+import { Provider } from 'react-redux';
+import { AppContainer } from 'react-hot-loader';  
+import thunk from 'redux-thunk';
+// 引入路由配置模块
+import RouterList from './router.js';
+import { createStore, applyMiddleware } from 'redux';
+import reducer from './reducer/';
+
+// redux 注入操作
+const middleware = [thunk];
+const store = createStore(reducer, applyMiddleware(...middleware));
+// console.log(store.getState());
+
+const mountNode = document.getElementById('app'); // 设置要挂在的点
+
+const hotRender = Component => render(
+  <AppContainer>
+    <Provider store={store}>
+      <Component />
+    </Provider>
+  </AppContainer>
+, mountNode);
+
+hotRender(RouterList);
+
+console.log(process.env.NODE_ENV);
+if(process.env.NODE_ENV === 'development') {
+  if(module.hot) {
+    console.log('refresh-hot');
+    module.hot.accept('./router', (err) => {
+      console.log('refresh-hot-1');
+      if (err) {
+        console.log(err);
+      }
+      unmountComponentAtNode(mountNode);
+      hotRender(RouterList);
+    });
+  } 
+}
+
+```
