@@ -87,7 +87,7 @@ webpack 配置`build/`
 ### 开始
 
 ```sh
-npm i babel-loader babel-core --save-dev
+npm i babel-loader@7 babel-core --save-dev
 ```
 
 - babel-loader: 这个包允许使用babel和webpack来转换JavaScript文件。
@@ -395,16 +395,18 @@ npm i --save react react-dom prop-types
 
 > 升级 4.x [https://zhuanlan.zhihu.com/p/27433116](https://zhuanlan.zhihu.com/p/27433116)
 
-[react-router](https://reacttraining.com/)
-[v3 升级 v4](https://blog.csdn.net/chenqiuge1984/article/details/80131519)
+- [react-router](https://reacttraining.com/)
+- [v3 升级 v4](https://blog.csdn.net/chenqiuge1984/article/details/80131519)
+- [Dynamic Routing 思想](https://github.com/wayou/wayou.github.io/issues/16)
+- [React Router v4 几乎误我一生](https://zhuanlan.zhihu.com/p/27433116)
 
 ```sh
-npm i --save react-router react-router-dom
+npm i --save react-router-dom
 
 # 导入 history
 npm i --save history
 ```
-
+ 
 ### redux
 
 > redux数据处理 [https://cn.redux.js.org/](https://cn.redux.js.org/)
@@ -466,7 +468,7 @@ if(process.env.NODE_ENV === 'development') {
       unmountComponentAtNode(mountNode);
       hotRender(RouterList);
     });
-  } 
+  }
 }
 
 ```
