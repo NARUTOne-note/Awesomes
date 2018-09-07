@@ -406,7 +406,7 @@ npm i --save react-router-dom
 # 导入 history
 npm i --save history
 ```
- 
+
 ### redux
 
 > redux数据处理 [https://cn.redux.js.org/](https://cn.redux.js.org/)
@@ -471,4 +471,41 @@ if(process.env.NODE_ENV === 'development') {
   }
 }
 
+```
+
+### 异步import, code split
+
+> 异步导入组件，代码拆分
+
+```sh
+npm i --save-dev babel-plugin-syntax-dynamic-import
+
+npm i --save react-loadable
+```
+
+配置使用
+
+```js
+{
+  "presets": [
+    "react"
+  ],
+  "plugins": [
+    "syntax-dynamic-import"
+  ]
+}
+
+import Loadable from 'react-loadable';
+import Loading from './Loading';
+
+const LoadableComponent = Loadable({
+  loader: () => import('./Dashboard'),
+  loading: Loading,
+})
+
+export default class LoadableDashboard extends React.Component {
+  render() {
+    return <LoadableComponent />;
+  }
+}
 ```
