@@ -509,3 +509,100 @@ export default class LoadableDashboard extends React.Component {
   }
 }
 ```
+
+## Antd
+
+> Ant Design 的 React 实现, 蚂蚁UI组件库 [ant-design](https://ant.design/docs/react/introduce-cn)
+
+```sh
+# install 
+npm i antd --save
+# 按需加载
+npm i babel-plugin-import --save-dev
+```
+
+**babel-config**:
+
+```js
+["import", { "libraryName": "antd", "libraryDirectory": "es", "style": true }]
+```
+
+### 定制主题
+
+- [Errors when importing antd.less using less-loader #7850](https://github.com/ant-design/ant-design/issues/7850)
+- [定制主题中单独使 webpack 进行 theme 定制的更改步骤补充 #8035](https://github.com/ant-design/ant-design/pull/8035/commits/7fef8e993a0049579d3a00de4691efef255127b6)
+
+**config/theme.js**:
+
+```js
+/**
+ * antd theme config
+ */
+
+const defaultColor = '#4285f4';
+
+module.exports = () => {
+  return {
+    'primary-color': defaultColor,
+    'link-color': defaultColor,
+    'border-radius-base': '3px',
+    'menu-collapsed-width': '70px',
+  };
+};
+
+// const fs = require('fs')
+// const path = require('path')
+// const lessToJs = require('less-vars-to-js')
+
+// module.exports = () => {
+//   const themePath = path.join(__dirname, './src/utiles/style/theme.less')
+//   return lessToJs(fs.readFileSync(themePath, 'utf8'))
+// }
+
+```
+
+**package.json**:
+
+```js
+"theme": "./config/theme.js",
+```
+
+**webpack.base.config.js**:
+
+```js
+// 获取theme
+const fs = require('fs');
+const pkgPath = path.resolve(__dirname, './package.json');
+const pkg = fs.existsSync(pkgPath) ? require(pkgPath) : {};
+let theme = {};
+if (pkg.theme && typeof pkg.theme === 'string') {
+  let cfgPath = pkg.theme;
+  if (cfgPath.charAt(0) === '.') {
+    cfgPath = path.resolve(__dirname, cfgPath);
+  }
+  const getThemeConfig = require(cfgPath);
+  theme = getThemeConfig();
+} else if (pkg.theme && typeof pkg.theme === 'object') {
+  theme = pkg.theme;
+}
+
+...
+
+{
+  test: /\.less$/,
+  use: [
+    MiniCssExtractPlugin.loader,
+    'css-loader',
+    'postcss-loader',
+    {
+      loader: 'less-loader',
+      options: {
+        "sourceMap": true,
+        "modules": false,
+        "modifyVars": theme,
+        'javascriptEnabled': true
+      }
+    }
+  ]
+}
+```
