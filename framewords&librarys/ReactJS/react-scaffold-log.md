@@ -376,7 +376,7 @@ new StyleLintPlugin({
 
 > ☝ 注意 写进package.json中不能带有注释
 
-## 持续集成服务 Travis CI 
+## 持续集成服务 Travis CI
 
 > 绑定 Github 上面的项目，只要有新的代码，就会自动抓取。然后，提供一个运行环境，执行测试，完成构建，还能部署到服务器。
 
@@ -424,6 +424,8 @@ yarn add react-router-redux@5.0.0
 
 ### react应用热更新
 
+[https://github.com/gaearon/react-hot-loader/issues/511#issuecomment-288673129](https://github.com/gaearon/react-hot-loader/issues/511#issuecomment-288673129)
+
 ```sh
 npm i --save-dev react-hot-loader
 ```
@@ -435,7 +437,7 @@ import { Provider } from 'react-redux';
 import { AppContainer } from 'react-hot-loader';  
 import thunk from 'redux-thunk';
 // 引入路由配置模块
-import RouterList from './router.js';
+import RouterList from './router/';
 import { createStore, applyMiddleware } from 'redux';
 import reducer from './reducer/';
 
@@ -456,15 +458,13 @@ const hotRender = Component => render(
 
 hotRender(RouterList);
 
-console.log(process.env.NODE_ENV);
 if(process.env.NODE_ENV === 'development') {
   if(module.hot) {
-    console.log('refresh-hot');
-    module.hot.accept('./router', (err) => {
-      console.log('refresh-hot-1');
+    module.hot.accept('./router/', (err) => {
       if (err) {
         console.log(err);
       }
+      const RouterList = require('./router/').default;
       unmountComponentAtNode(mountNode);
       hotRender(RouterList);
     });
@@ -484,6 +484,7 @@ npm i --save react-loadable
 ```
 
 配置使用
+[解决异步loadable引入导致react-hot-loader失效](https://medium.com/@giang.nguyen.dev/hot-loader-with-react-loadable-c8f70c8ce1a6)
 
 ```js
 {
@@ -515,7 +516,7 @@ export default class LoadableDashboard extends React.Component {
 > Ant Design 的 React 实现, 蚂蚁UI组件库 [ant-design](https://ant.design/docs/react/introduce-cn)
 
 ```sh
-# install 
+# install
 npm i antd --save
 # 按需加载
 npm i babel-plugin-import --save-dev
