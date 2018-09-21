@@ -407,6 +407,10 @@ npm i --save react-router-dom
 npm i --save history
 ```
 
+**history跳转**:
+
+[https://github.com/brickspert/blog/issues/3](https://github.com/brickspert/blog/issues/3)
+
 ### redux
 
 > redux数据处理 [https://cn.redux.js.org/](https://cn.redux.js.org/)
