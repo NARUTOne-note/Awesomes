@@ -611,3 +611,7 @@ if (pkg.theme && typeof pkg.theme === 'string') {
   ]
 }
 ```
+
+## webpack 优化
+
+参考： [webpack4.0打包优化策略](https://juejin.im/post/5abbc2ca5188257ddb0fae9b)
