@@ -70,10 +70,8 @@ const HOCContainer = (WrappedComponent) => {
 
     render () {
       const newProps = {
-        name: {
-          value: this.state.name,
-          onChange: this.onNameChange
-        }
+        value: this.state.name,
+        onChange: this.onNameChange
       };
 
       return <WrappedComponent {...this.props} {...newProps} />
@@ -113,7 +111,7 @@ function HOCStyleComponent (WrappedComponent, style) {
     }
   }
 }
-export default HOCRemoveProps;
+export default HOCStyleComponent;
 ```
 
 ## 继承高阶
