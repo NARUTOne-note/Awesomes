@@ -8,7 +8,7 @@ class Home extends Component {
         <header className="home-body">
           <img src={logo} className="react-logo" alt="logo" />
           <p>
-            Edit <code>src/App.js</code> and save to reload.
+            Edit <code>src/xxx</code> and save to reload.
           </p>
           <a
             className="react-link"
@@ -16,7 +16,7 @@ class Home extends Component {
             target="_blank"
             rel="noopener noreferrer"
           >
-            Learn React
+            Learn more React
           </a>
         </header>
       </div>

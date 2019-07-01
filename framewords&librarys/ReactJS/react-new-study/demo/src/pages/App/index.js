@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link, withRouter} from 'react-router-dom';
 import RenderRouter from '@/components/RenderRouter/';
-import { Layout, Menu, Breadcrumb, Icon } from 'antd';
+import { Layout, Menu, Breadcrumb, Icon, Row, Col } from 'antd';
 import navsList from '@/mock/nav';
 import getNodeByKeyValues from 'flo-utils/lib/collection/getNodeByKeyValues';
 
@@ -95,12 +95,23 @@ class App extends React.Component {
             </Menu>
           </Sider>
           <Layout>
-            <Header style={{ background: '#fff', padding: 0 }}>
-              <Icon
-                className="trigger"
-                type={this.state.collapsed ? 'menu-unfold' : 'menu-fold'}
-                onClick={this.toggle}
-              />
+            <Header style={{ background: '#fff', padding: '0 8px' }}>
+              <Row gutter={8}>
+                <Col span={4}>
+                  <Icon
+                    className="trigger"
+                    type={this.state.collapsed ? 'menu-unfold' : 'menu-fold'}
+                    onClick={this.toggle}
+                  />
+                </Col>
+                <Col span={16} className="t-center">
+                  <span className="bold default-color" style={{fontSize: 22}}>React学习</span>
+                </Col>
+                <Col span={4} className="t-right">
+                  <span className='bold'>v16.8.6</span>&nbsp;&nbsp;
+                  <a href="https://react.docschina.org/"><Icon type='github'/></a>
+                </Col>
+              </Row>
             </Header>
             <Content className="app-body">
               <div className="app-bread">
@@ -109,7 +120,9 @@ class App extends React.Component {
                   {extraBreadcrumbItems}
                 </Breadcrumb>
               </div>
-              <RenderRouter routers={routers}></RenderRouter>
+              <div className="app-body-content">
+                <RenderRouter routers={routers}></RenderRouter>
+              </div>
             </Content>
             <Footer style={{ textAlign: 'center' }}>Copyright©{new Date().getFullYear()} Corporation All Rights Reserved</Footer>
           </Layout>
