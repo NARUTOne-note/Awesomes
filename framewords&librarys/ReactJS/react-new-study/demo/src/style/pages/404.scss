@@ -1,0 +1,62 @@
+.bi-404 {
+  width: 100vw;
+  padding-top: 150px;
+  text-align: center;
+  height: 100vh;
+  background-color: #f0f1f5;
+  &-body-con {
+    width: 700px;
+    height: 500px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    &-bg {
+      display: block;
+      width: 619px;
+      height: 323px;
+      margin: 0 auto;
+      text-align: center;
+      background: url('../assets/img/404.png') no-repeat center bottom;
+      animation: error404animation 2s ease-out 1;
+    }
+    &-message {
+      text-align: center;
+      &-info {
+        font-size: 20px;
+        color: $warn-color;
+      }
+      &-text {
+        font-size: 16px;
+        color: #999;
+      }
+    }
+  }
+  &-btn-con {
+    text-align: center;
+    padding: 20px 0;
+    margin-bottom: 40px;
+    font-size: 18px;
+  }
+}
+
+@keyframes error404animation {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  20% {
+    transform: rotateZ(-60deg);
+  }
+  40% {
+    transform: rotateZ(-10deg);
+  }
+  60% {
+    transform: rotateZ(50deg);
+  }
+  80% {
+    transform: rotateZ(-20deg);
+  }
+  100% {
+    transform: rotateZ(0deg);
+  }
+}

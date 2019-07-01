@@ -13,6 +13,24 @@ class App extends React.Component {
     collapsed: false,
   };
 
+  componentWillReceiveProps (nextProps) {
+    if (this.props.location.pathname !== nextProps.location.pathname) {
+      this.init(nextProps)
+    }
+  }
+
+  componentDidMount () {
+    this.init(this.props);
+  }
+
+  init (props) {
+    const {location} = props;
+
+    if (location.pathname === '/') {
+      this.props.history.push('/home');
+    }
+  }
+
   toggle = () => {
     this.setState({
       collapsed: !this.state.collapsed,
@@ -56,6 +74,17 @@ class App extends React.Component {
         </Breadcrumb.Item>
       );
     });
+
+    if (location.pathname === '/404') {
+      return <div className="app-page">
+         <Layout className="app-page-layout">
+          <Content className="app-body">
+            <RenderRouter routers={routers}></RenderRouter>
+          </Content>
+         </Layout>
+      </div>
+    }
+
     return (
       <div className="app-page">
         <Layout className="app-page-layout">

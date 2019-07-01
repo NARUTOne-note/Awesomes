@@ -18,7 +18,7 @@ const routerList = routers.map((item, index) => {
       render={(props) => item.redirectUrl ? <Redirect to={item.redirectUrl} /> : <ComponentPage {...props}/>}
       key={'page' + index + item.path}/>;
   }
-  return <Route component={ComponentPage} key={'page' + index}/>;
+  return <Route component={<ComponentPage></ComponentPage>} key={'page' + index}/>;
 });
 
 const getConfirmation = (message, callback) => {

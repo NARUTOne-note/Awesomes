@@ -1,13 +1,14 @@
+import React from 'react';
 import loadable from '@loadable/component'
 import LoadPage from "@/components/LoadPage";
 
-const API = loadable(() => import('../pages/API'), {
-  fallback: LoadPage
-});
+const API = loadable(props => import('../pages/API'), {
+  fallback: <LoadPage/>
+})
 
-const APIMemo = loadable(() => import('../pages/API/Memo'), {
-  fallback: LoadPage
-});
+const Memo = loadable(props => import('../pages/API/Memo'), {
+  fallback: <LoadPage/>
+})
 
 export default [
   {
@@ -21,7 +22,7 @@ export default [
         title: 'memo',
         subTitle: '状态记忆',
         path: '/api/memo',
-        component: APIMemo
+        component: Memo
       }
     ]
   }
