@@ -1,6 +1,8 @@
-import React, {Component} from 'react';
+import * as React from 'react';
 import {BrowserRouter, Route, Switch, Redirect} from 'react-router-dom';
 import routers from './router.config';
+
+export type Callback = (a: any) => void;
 
 const routerList = routers.map((item, index) => {
   const ComponentPage = item.component;
@@ -18,16 +20,16 @@ const routerList = routers.map((item, index) => {
       render={(props) => item.redirectUrl ? <Redirect to={item.redirectUrl} /> : <ComponentPage {...props}/>}
       key={'page' + index + item.path}/>;
   }
-  return <Route component={<ComponentPage></ComponentPage>} key={'page' + index}/>;
+  return <Route component={() => <ComponentPage></ComponentPage>} key={'page' + index}/>;
 });
 
-const getConfirmation = (message, callback) => {
+const getConfirmation = (message: string, callback: Callback) => {
   const allowTransition = window.confirm(message);
   console.log(message);
   callback(allowTransition);
 };
 
-class RouterList extends Component{
+class RouterList extends React.Component{
   render () {
     return (
       <BrowserRouter basename="" getUserConfirmation={getConfirmation}>

@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
+import * as React from 'react';
 
-class RMemo extends Component {
+class RMemo extends React.Component {
   render() {
     return (
       <div>

@@ -1,22 +1,23 @@
-import React from 'react';
+import * as React from 'react';
 import navsList from '@/mock/nav';
 import loadable from '@loadable/component'
 import LoadPage from "@/components/LoadPage";
+import {RouterProps} from '@/utils/interface';
 
-const App = loadable(props => import('../pages/App'), {
+const App = loadable(() => import('../pages/App'), {
   fallback: <LoadPage/>
 })
 
-const Home = loadable(props => import('../pages/Home'), {
+const Home = loadable(() => import('../pages/Home'), {
   fallback: <LoadPage/>
 })
 
-const NotFound = loadable(props => import('../pages/NotFound'), {
+const NotFound = loadable(() => import('../pages/NotFound'), {
   fallback: <LoadPage/>
 })
 
 
-export default [
+const routers: RouterProps<Object>[] = [
   {
     path: '/',
     title: 'React',
@@ -28,6 +29,7 @@ export default [
         title: '首页',
       },
       {
+        title: '404',
         component: NotFound,
         path: '/404'
       },
@@ -35,3 +37,5 @@ export default [
     ]
   }
 ]
+
+export default routers;

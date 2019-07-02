@@ -1,16 +1,17 @@
-import React from 'react';
+import * as React from 'react';
 import loadable from '@loadable/component'
 import LoadPage from "@/components/LoadPage";
+import {RouterProps} from '@/utils/interface';
 
-const API = loadable(props => import('../pages/API'), {
+const API = loadable(() => import('../pages/API'), {
   fallback: <LoadPage/>
 })
 
-const Memo = loadable(props => import('../pages/API/Memo'), {
+const Memo = loadable(() => import('../pages/API/Memo'), {
   fallback: <LoadPage/>
 })
 
-export default [
+const navsList: RouterProps<Object>[] = [
   {
     title: 'React API',
     subTitle: '顶层API',
@@ -27,3 +28,5 @@ export default [
     ]
   }
 ]
+
+export default navsList;

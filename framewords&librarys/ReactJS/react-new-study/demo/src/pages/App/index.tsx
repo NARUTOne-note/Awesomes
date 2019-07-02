@@ -1,19 +1,22 @@
 import React from 'react';
-import {Link, withRouter} from 'react-router-dom';
+import {Link, withRouter, RouteComponentProps} from 'react-router-dom';
 import RenderRouter from '@/components/RenderRouter/';
 import { Layout, Menu, Breadcrumb, Icon, Row, Col } from 'antd';
 import navsList from '@/mock/nav';
-import getNodeByKeyValues from 'flo-utils/lib/collection/getNodeByKeyValues';
+import {getNodeByKeyValues} from 'flo-utils';
+import {RouterProps, RenderRouterProps} from '@/utils/interface';
+
+interface Props extends RenderRouterProps<Object>, RouteComponentProps {}
 
 const { Header, Content, Footer, Sider } = Layout;
 const { SubMenu } = Menu;
 
-class App extends React.Component {
+class App<T> extends React.Component<Props, {}> {
   state = {
     collapsed: false,
   };
 
-  componentWillReceiveProps (nextProps) {
+  componentWillReceiveProps (nextProps: RouteComponentProps) {
     if (this.props.location.pathname !== nextProps.location.pathname) {
       this.init(nextProps)
     }
@@ -23,7 +26,7 @@ class App extends React.Component {
     this.init(this.props);
   }
 
-  init (props) {
+  init (props: RouteComponentProps) {
     const {location} = props;
 
     if (location.pathname === '/') {
@@ -37,8 +40,8 @@ class App extends React.Component {
     });
   };
 
-  renderMenu (navData) {
-    const subTitle = (item) => <span><Icon type={item.icon || 'compass'} />
+  renderMenu (navData: RouterProps<Object>[]) {
+    const subTitle = (item: RouterProps<T>) => <span><Icon type={item.icon || 'compass'} />
       <span className="nav-text">{item.title}</span>
       <span className="nav-sub-text">{item.subTitle}</span>
     </span>;
@@ -132,4 +135,4 @@ class App extends React.Component {
   }
 }
 
-export default withRouter(App);
+export default withRouter<Props>(App as any);

@@ -1,7 +1,12 @@
 import React from 'react';
 import {Icon} from 'antd';
 
-const NotFound = (props) => {
+interface Props {
+  style: Object,
+  toPath: string
+}
+
+const NotFound = (props: Props) => {
   return (
     <div className="bi-404" style={props.style}>
       <div className="bi-404-body-con">

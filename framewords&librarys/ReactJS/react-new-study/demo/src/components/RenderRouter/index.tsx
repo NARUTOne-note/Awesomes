@@ -1,8 +1,11 @@
-import React, {Component} from 'react';
-import {Switch, Route, Redirect, withRouter} from 'react-router-dom';
+import * as React from 'react';
+import {Switch, Route, Redirect, withRouter, RouteComponentProps } from 'react-router-dom';
+import {RouterProps, RenderRouterProps} from '@/utils/interface';
 
-class RenderRouter extends Component {
-  requireLogin = (component, props) => {
+interface Props extends RenderRouterProps<Object>, RouteComponentProps {}
+
+class RenderRouter<T> extends React.Component<Props, {}> {
+  requireLogin = (component: React.ReactNode, props: RouterProps<T>) => {
     if (props.redirectUrl) {
       return <Redirect to={props.redirectUrl}/>;
     }
@@ -33,4 +36,4 @@ class RenderRouter extends Component {
   }
 }
 
-export default withRouter(RenderRouter);
+export default withRouter<Props>(RenderRouter as any);

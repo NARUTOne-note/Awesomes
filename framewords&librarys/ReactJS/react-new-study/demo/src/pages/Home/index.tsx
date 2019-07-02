@@ -6,7 +6,7 @@ class Home extends Component {
     return (
       <div className="home">
         <header className="home-body">
-          <img src={logo} className="react-logo" alt="logo" />
+          <img src={logo} alt="Logo" className="react-logo"/>
           <p>
             Edit <code>src/xxx</code> and save to reload.
           </p>
