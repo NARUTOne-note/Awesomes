@@ -1,9 +1,10 @@
-import React, { Component } from 'react';
+import React, { PureComponent, Component } from 'react';
 import {Button} from 'antd';
 
 /**
- * React.memo
- * React.memo 为高阶组件。它与 React.PureComponent 非常相似，但它适用于函数组件，但不适用于 class 组件。
+ * PureComponent
+ * React.PureComponent 中的 shouldComponentUpdate() 仅作对象的浅层比较
+ * 浅层对比 prop 和 state 的方式来实现了该函数提高性能
  */
 
 interface countInterface {
@@ -15,28 +16,19 @@ interface Props extends countInterface {}
 
 interface States extends countInterface {}
 
-function memoComt (props: Props):JSX.Element {
-  const {count, words} = props;
-  return (
-    <div>
-      <p>点击了 {count} 次 </p>
-      <p>words: {words.join(',')}</p>
-    </div>
-  );
+class PureComt extends PureComponent<Props, {}> {
+  render() {
+    const {count, words} = this.props;
+    return (
+      <div>
+        <p>点击了 {count} 次 </p>
+        <p>words: {words.join(',')}</p>
+      </div>
+    );
+  }
 }
 
-/*
-  如果把 nextProps 传入 render 方法的返回结果与
-  将 prevProps 传入 render 方法的返回结果一致则返回 true，
-  否则返回 false
-*/
-/* function areEqual(prevProps, nextProps) {}
-  React.memo(MyComponent, areEqual);
-*/
-
-const MemoComt = React.memo(memoComt);
-
-class MemoDemo extends Component<{}, States> {
+class PureDemo extends Component<{}, States> {
   state = {
     count: 0,
     words: ['marklar']
@@ -67,13 +59,14 @@ class MemoDemo extends Component<{}, States> {
   render() {
     return (
       <div>
-        <h1>React.memo</h1>
-        <p>React.memo 为高阶组件。它与 React.PureComponent 非常相似，但它适用于函数组件，但不适用于 class 组件</p>
+        <h1>React.PureComponent</h1>
+        <p>React.PureComponent 与 React.Component 很相似。两者的区别在于 React.Component 并未实现 shouldComponentUpdate()，而 React.PureComponent 中以浅层对比 prop 和 state 的方式来实现了该函数。</p>
+        <p>如果赋予 React 组件相同的 props 和 state，render() 函数会渲染相同的内容，那么在某些情况下使用 React.PureComponent 可提高性能。</p>
         <h2>测试</h2>
         <h3>测试words</h3>
-        <MemoComt count={0} words={this.state.words}></MemoComt>
+        <PureComt count={0} words={this.state.words}></PureComt>
         <h3>测试count与words</h3>
-        <MemoComt count={this.state.count} words={this.state.words}></MemoComt>
+        <PureComt count={this.state.count} words={this.state.words}></PureComt>
         <h3>实际情况</h3>
         <p>实际点击次数：{this.state.count}</p>
         <p>实际words: {this.state.words.join(',')}</p>
@@ -87,4 +80,4 @@ class MemoDemo extends Component<{}, States> {
   }
 }
 
-export default MemoDemo;
+export default PureDemo;

@@ -11,6 +11,10 @@ const Memo = loadable(() => import('../pages/API/Memo'), {
   fallback: <LoadPage/>
 })
 
+const PureDemo = loadable(() => import('../pages/API/PureComponent'), {
+  fallback: <LoadPage/>
+})
+
 const navsList: RouterProps<Object>[] = [
   {
     title: 'React API',
@@ -24,7 +28,13 @@ const navsList: RouterProps<Object>[] = [
         subTitle: '状态记忆',
         path: '/api/memo',
         component: Memo
-      }
+      },
+      {
+        title: 'PureComponent',
+        subTitle: '浅层比较',
+        path: '/api/PureComponent',
+        component: PureDemo
+      },
     ]
   }
 ]

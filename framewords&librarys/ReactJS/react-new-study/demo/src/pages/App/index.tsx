@@ -91,23 +91,30 @@ class App<T> extends React.Component<Props, {}> {
     return (
       <div className="app-page">
         <Layout className="app-page-layout">
-          <Sider trigger={null} collapsible collapsed={this.state.collapsed}>
-            <div className="app-logo" />
-            <Menu theme="dark" mode="inline">
+          <Sider trigger={null} collapsible collapsed={this.state.collapsed} width={300}>
+            <Link to="/home"><span className="app-logo" /></Link>
+            <Menu theme="dark" mode="inline" defaultOpenKeys={['/api']}>
               {this.renderMenu(navsList)}
             </Menu>
           </Sider>
           <Layout>
             <Header style={{ background: '#fff', padding: '0 8px' }}>
               <Row gutter={8}>
-                <Col span={4}>
+                <Col span={6} className="clear-float">
                   <Icon
-                    className="trigger"
+                    className="trigger left"
                     type={this.state.collapsed ? 'menu-unfold' : 'menu-fold'}
                     onClick={this.toggle}
+                    style={{ margin: '20px 16px', fontSize: '16px' }}
                   />
+                  <div className="app-bread left">
+                    <Breadcrumb style={{ margin: '16px' }}>
+                      <Breadcrumb.Item><Link to='/'>React</Link></Breadcrumb.Item>
+                      {extraBreadcrumbItems}
+                    </Breadcrumb>
+                  </div>
                 </Col>
-                <Col span={16} className="t-center">
+                <Col span={14} className="t-center">
                   <span className="bold default-color" style={{fontSize: 22}}>React学习</span>
                 </Col>
                 <Col span={4} className="t-right">
@@ -116,13 +123,7 @@ class App<T> extends React.Component<Props, {}> {
                 </Col>
               </Row>
             </Header>
-            <Content className="app-body">
-              <div className="app-bread">
-                <Breadcrumb style={{ margin: '12px 8px' }}>
-                  <Breadcrumb.Item><Link to='/'>React</Link></Breadcrumb.Item>
-                  {extraBreadcrumbItems}
-                </Breadcrumb>
-              </div>
+            <Content className="app-body">              
               <div className="app-body-content">
                 <RenderRouter routers={routers}></RenderRouter>
               </div>
