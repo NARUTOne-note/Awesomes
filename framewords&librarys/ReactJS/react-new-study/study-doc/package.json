@@ -30,20 +30,6 @@
     "test": "react-app-rewired test",
     "eject": "react-scripts eject"
   },
-  "lint-staged": {
-    "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
-        "prettier --single-quote --write",
-        "git add"
-    ],
-    "*.css": "stylelint",
-    "*.scss": "stylelint --syntax=scss"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged",
-      "pre-push": "lint-staged"
-    }
-  },
   "eslintConfig": {
     "extends": "react-app"
   },
