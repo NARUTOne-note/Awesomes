@@ -2,7 +2,7 @@ import * as React from 'react';
 import navsList from '@/mock/nav';
 import loadable from '@loadable/component'
 import LoadPage from "@/components/LoadPage";
-import {RouterProps} from '@/utils/interface';
+import {RouterProps} from '@/utils/TS/interface';
 
 const App = loadable(() => import('../pages/App'), {
   fallback: <LoadPage/>

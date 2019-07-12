@@ -4,7 +4,7 @@ import RenderRouter from '@/components/RenderRouter/';
 import { Layout, Menu, Breadcrumb, Icon, Row, Col } from 'antd';
 import navsList from '@/mock/nav';
 import {getNodeByKeyValues} from 'flo-utils';
-import {RouterProps, RenderRouterProps} from '@/utils/interface';
+import {RouterProps, RenderRouterProps} from '@/utils/TS/interface';
 
 interface Props extends RenderRouterProps<Object>, RouteComponentProps {}
 

@@ -1,6 +1,6 @@
 import * as React from 'react';
 import {Switch, Route, Redirect, withRouter, RouteComponentProps } from 'react-router-dom';
-import {RouterProps, RenderRouterProps} from '@/utils/interface';
+import {RouterProps, RenderRouterProps} from '@/utils/TS/interface';
 
 interface Props extends RenderRouterProps<Object>, RouteComponentProps {}
 

@@ -1,0 +1,36 @@
+{
+	"parser": "@typescript-eslint/parser",
+	"extends": [
+		"plugin:@typescript-eslint/recommended",
+		"react-app", 
+		"plugin:prettier/recommended",
+	],
+	"plugins": ["@typescript-eslint", "react", "prettier"],
+  "rules": {
+		"prettier/prettier": "error",
+		"indent": ["error", 2],
+		"quotes": ["error", "double"],
+		"semi": [
+			"error",
+			"always"
+		],
+		"prefer-const": [2],
+		"spaced-comment": [2],
+		"jsx-quotes": [2],
+		"key-spacing": [2],
+		"camelcase": [1],
+		"comma-spacing": [2],
+		"react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+		"global-require": [1],
+		"react/jsx-no-bind": [0],
+		"react/jsx-uses-react": "error", 
+		"react/jsx-uses-vars": "error",
+		"no-console": "off",
+		"func-call-spacing": [
+			"error",
+			"never"
+		],
+		"block-spacing": "error",
+		"space-before-function-paren": [2]
+	}
+}

@@ -1,7 +1,7 @@
 import * as React from 'react';
 import loadable from '@loadable/component'
 import LoadPage from "@/components/LoadPage";
-import {RouterProps} from '@/utils/interface';
+import {RouterProps} from '@/utils/TS/interface';
 
 const API = loadable(() => import('../pages/API'), {
   fallback: <LoadPage/>

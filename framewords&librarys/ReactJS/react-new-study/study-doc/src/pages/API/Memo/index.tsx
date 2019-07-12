@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import {Button} from 'antd';
+import Demo from '@/components/Demo';
+import DocLine from '@/components/DocLine';
 
 /**
  * React.memo
@@ -69,19 +71,23 @@ class MemoDemo extends Component<{}, States> {
       <div>
         <h1>React.memo</h1>
         <p>React.memo 为高阶组件。它与 React.PureComponent 非常相似，但它适用于函数组件，但不适用于 class 组件</p>
-        <h2>测试</h2>
-        <h3>测试words</h3>
-        <MemoComt count={0} words={this.state.words}></MemoComt>
-        <h3>测试count与words</h3>
-        <MemoComt count={this.state.count} words={this.state.words}></MemoComt>
-        <h3>实际情况</h3>
-        <p>实际点击次数：{this.state.count}</p>
-        <p>实际words: {this.state.words.join(',')}</p>
-        <div className="btns-margin" style={{marginTop: 16}}>
-          <Button type="primary" icon="plus" onClick={this.onAdd}>点击增加</Button>
-          <Button icon="minus" onClick={this.onReduce}>点击减少</Button>
-          <Button icon="code" onClick={this.onWords}>words</Button>
-        </div>
+        <Demo title="React.memo">
+          <div>
+            <h3>测试words</h3>
+            <MemoComt count={0} words={this.state.words}></MemoComt>
+            <h3>测试count与words</h3>
+            <MemoComt count={this.state.count} words={this.state.words}></MemoComt>
+            <h3>实际情况</h3>
+            <p>实际点击次数：{this.state.count}</p>
+            <p>实际words: {this.state.words.join(',')}</p>
+            <div className="btns-margin" style={{marginTop: 16}}>
+              <Button type="primary" icon="plus" onClick={this.onAdd}>点击增加</Button>
+              <Button icon="minus" onClick={this.onReduce}>点击减少</Button>
+              <Button icon="code" onClick={this.onWords}>words</Button>
+            </div>
+          </div>
+        </Demo>
+        <DocLine><a href="https://react.docschina.org/docs/react-api.html#reactmemo">React.memo文档</a></DocLine>    
       </div>      
     );
   }

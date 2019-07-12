@@ -1,0 +1,51 @@
+.doc-line {
+  position: relative;
+  padding: 8px 16px 8px 20px;
+  line-height: 1.2;
+  pre {
+    display: block;
+    font-family: Consolas, Menlo, Courier, monospace;
+    font-size: 1em;
+    white-space: pre;
+  }
+  code {
+    display: inline-block;
+    background: #f7f7f7;
+    font-family: Consolas, Monaco, Andale Mono, Ubuntu Mono, monospace;
+    margin: 0 3px;
+    padding: 1px 5px;
+    border-radius: 3px;
+    color: #666;
+    border: 1px solid #eee;
+  }
+}
+.doc-text {
+  &::before {
+    content: '🔹';
+    position: absolute;
+    top: 10px;
+    left: 0;
+    z-index: 9;
+  }
+}
+.doc-warn {
+  background-color: rgba(236, 193, 113, 0.6);
+  &::before {
+    content: '❗';
+    position: absolute;
+    top: 8px;
+    left: 3px;
+    z-index: 9;
+  }
+}
+
+.doc-error {
+  background-color: rgba(236, 117, 113, 0.6);
+  &::before {
+    content: '❓';
+    position: absolute;
+    top: 8px;
+    left: 1px;
+    z-index: 9;
+  }
+}
