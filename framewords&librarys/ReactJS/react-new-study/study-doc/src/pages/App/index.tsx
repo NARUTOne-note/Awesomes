@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import {Link, withRouter, RouteComponentProps} from 'react-router-dom';
 import RenderRouter from '@/components/RenderRouter/';
 import { Layout, Menu, Breadcrumb, Icon, Row, Col } from 'antd';

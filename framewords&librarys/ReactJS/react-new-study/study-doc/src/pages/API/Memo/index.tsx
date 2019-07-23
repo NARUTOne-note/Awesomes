@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Button} from 'antd';
+import { Button } from 'antd';
 import Demo from '@/components/Demo';
 import DocLine from '@/components/DocLine';
 
@@ -8,17 +8,13 @@ import DocLine from '@/components/DocLine';
  * React.memo 为高阶组件。它与 React.PureComponent 非常相似，但它适用于函数组件，但不适用于 class 组件。
  */
 
-interface countInterface {
-  count: number,
-  words: Array<string>
+interface CountInterface {
+  count: number;
+  words: string[];
 }
 
-interface Props extends countInterface {}
-
-interface States extends countInterface {}
-
-function memoComt (props: Props):JSX.Element {
-  const {count, words} = props;
+function memoComt(props: CountInterface): JSX.Element {
+  const { count, words } = props;
   return (
     <div>
       <p>点击了 {count} 次 </p>
@@ -38,39 +34,42 @@ function memoComt (props: Props):JSX.Element {
 
 const MemoComt = React.memo(memoComt);
 
-class MemoDemo extends Component<{}, States> {
+class MemoDemo extends Component<{}, CountInterface> {
   state = {
     count: 0,
-    words: ['marklar']
+    words: ['marklar'],
   };
 
   onAdd = () => {
-    this.setState(({count}) => {
+    this.setState(({ count }) => {
       return {
-        count: count + 1
-      }
+        count: count + 1,
+      };
     });
-  }
+  };
 
   onReduce = () => {
-    this.setState(({count}) => {
+    this.setState(({ count }) => {
       return {
-        count: count - 1
-      }
+        count: count - 1,
+      };
     });
-  }
+  };
 
   onWords = () => {
     const words = this.state.words;
     words.push('marklar');
-    this.setState({words: words});
-  }
-  
+    this.setState({ words: words });
+  };
+
   render() {
     return (
       <div>
         <h1>React.memo</h1>
-        <p>React.memo 为高阶组件。它与 React.PureComponent 非常相似，但它适用于函数组件，但不适用于 class 组件</p>
+        <p>
+          React.memo 为高阶组件。它与 React.PureComponent 非常相似，但它适用于函数组件，但不适用于
+          class 组件
+        </p>
         <Demo title="React.memo">
           <div>
             <h3>测试words</h3>
@@ -80,15 +79,23 @@ class MemoDemo extends Component<{}, States> {
             <h3>实际情况</h3>
             <p>实际点击次数：{this.state.count}</p>
             <p>实际words: {this.state.words.join(',')}</p>
-            <div className="btns-margin" style={{marginTop: 16}}>
-              <Button type="primary" icon="plus" onClick={this.onAdd}>点击增加</Button>
-              <Button icon="minus" onClick={this.onReduce}>点击减少</Button>
-              <Button icon="code" onClick={this.onWords}>words</Button>
+            <div className="btns-margin" style={{ marginTop: 16 }}>
+              <Button type="primary" icon="plus" onClick={this.onAdd}>
+                点击增加
+              </Button>
+              <Button icon="minus" onClick={this.onReduce}>
+                点击减少
+              </Button>
+              <Button icon="code" onClick={this.onWords}>
+                words
+              </Button>
             </div>
           </div>
         </Demo>
-        <DocLine><a href="https://react.docschina.org/docs/react-api.html#reactmemo">React.memo文档</a></DocLine>    
-      </div>      
+        <DocLine>
+          <a href="https://react.docschina.org/docs/react-api.html#reactmemo">React.memo文档</a>
+        </DocLine>
+      </div>
     );
   }
 }
