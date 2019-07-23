@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { Button } from 'antd';
-import AlertHook from './AlertHook';
+import useAlertHook from './AlertHook';
 
 function CountDemo () {
   // 声明一个叫 “count” 的 state 变量, 初始值 0
   const [count, setCount] = useState(0);
-  const AlertHookNode = AlertHook({title: '点击次数统计'})
+  const AlertHookNode = useAlertHook({title: '点击次数统计'})
 
   // 相当于 componentDidMount 和 componentDidUpdate:
   useEffect(() => {

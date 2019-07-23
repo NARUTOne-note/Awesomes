@@ -10,7 +10,7 @@ export interface AlertHookProps {
   type?: AlertType
 }
 
-function AlertHook(props: AlertHookProps) {
+function useAlertHook(props: AlertHookProps) {
   const [msg, setMsg] = useState('');
 
   useEffect(() => {
@@ -26,4 +26,4 @@ function AlertHook(props: AlertHookProps) {
   );
 }
 
-export default AlertHook;
+export default useAlertHook;

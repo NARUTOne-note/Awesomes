@@ -25,6 +25,18 @@ const Hook = loadable(() => import('../pages/Hook'), {
 const HookOverview = loadable(() => import('../pages/Hook/Overview'), {
   fallback: <LoadPage/>
 })
+const HookState = loadable(() => import('../pages/Hook/StateHook'), {
+  fallback: <LoadPage/>
+})
+const HookEffect = loadable(() => import('../pages/Hook/EffectHook'), {
+  fallback: <LoadPage/>
+})
+const HookRule = loadable(() => import('../pages/Hook/HookRule'), {
+  fallback: <LoadPage/>
+})
+const HookCustom = loadable(() => import('../pages/Hook/CustomHook'), {
+  fallback: <LoadPage/>
+})
 
 const navsList: RouterProps<Object>[] = [
   {
@@ -60,6 +72,30 @@ const navsList: RouterProps<Object>[] = [
         subTitle: '概览',
         path: '/hook/overview',
         component: HookOverview
+      },
+      {
+        title: 'State Hook',
+        subTitle: '状态',
+        path: '/hook/state',
+        component: HookState
+      },
+      {
+        title: 'Effect Hook',
+        subTitle: '副作用',
+        path: '/hook/effect',
+        component: HookEffect
+      },
+      {
+        title: 'Hook Rule',
+        subTitle: '规则',
+        path: '/hook/rule',
+        component: HookRule
+      },
+      {
+        title: 'Hook',
+        subTitle: '自定义',
+        path: '/hook/custom',
+        component: HookCustom
       }
     ]
   }

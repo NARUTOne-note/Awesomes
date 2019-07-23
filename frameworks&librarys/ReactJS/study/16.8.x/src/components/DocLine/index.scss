@@ -1,7 +1,9 @@
 .doc-line {
   position: relative;
   padding: 8px 16px 8px 20px;
+  margin: 8px 0;
   line-height: 1.2;
+  border-radius: 6px;
   pre {
     display: block;
     font-family: Consolas, Menlo, Courier, monospace;
@@ -17,6 +19,13 @@
     border-radius: 3px;
     color: #666;
     border: 1px solid #eee;
+  }
+  ul, li {
+    list-style: disc;
+  }
+  li {
+    margin: 8px 16px;
+    line-height: 1.5;
   }
 }
 .doc-text {

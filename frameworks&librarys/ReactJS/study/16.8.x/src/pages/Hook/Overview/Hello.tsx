@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import AlertHook from './AlertHook';
+import useAlertHook from './AlertHook';
 
 export interface HelloProps {
   name: string
@@ -7,7 +7,7 @@ export interface HelloProps {
 
 function Hello(props: HelloProps) {
   const [color, setColor] = useState("red");
-  const AlertHookNode = AlertHook({title: 'Hello World!', type: 'success'})
+  const AlertHookNode = useAlertHook({title: 'Hello World!', type: 'success'})
 
   function handleClick() {
     const currColor = color == 'red' ? 'blue' : 'red';
