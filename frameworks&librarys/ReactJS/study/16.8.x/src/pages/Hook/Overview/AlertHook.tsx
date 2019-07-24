@@ -12,14 +12,14 @@ export interface AlertHookProps {
 
 function useAlertHook(props: AlertHookProps) {
   const [msg, setMsg] = useState('');
+  const {title} = props;
 
   useEffect(() => {
-    const {title} = props;
     setMsg(title);
     return () => {
       setMsg('');
     }
-  });
+  }, [title]);
 
   return (
     <Alert type={props.type || 'info'} message={msg}></Alert>

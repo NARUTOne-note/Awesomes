@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 
 function useCount (defaultCount: number = 0, id?: string) {
   // 声明一个叫 “count” 的 state 变量, 初始值 0

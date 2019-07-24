@@ -10,7 +10,7 @@ function Hello(props: HelloProps) {
   const AlertHookNode = useAlertHook({title: 'Hello World!', type: 'success'})
 
   function handleClick() {
-    const currColor = color == 'red' ? 'blue' : 'red';
+    const currColor = color === 'red' ? 'blue' : 'red';
     setColor(currColor);
   }
 

@@ -27,6 +27,11 @@ function CustomHook () {
           </Col>
         </Row>
       </Demo>
+      <DocLine type="warn">
+        <ul>
+          <li>自定义 Hook 是一种重用状态逻辑的机制, 在两个组件中使用相同的 Hook 不会共享 state </li>
+        </ul>
+      </DocLine>
     </div>
   );
 }

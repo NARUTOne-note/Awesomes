@@ -2,6 +2,7 @@ import React from 'react';
 import DocLine from '@/components/DocLine';
 import Demo from '@/components/Demo';
 import CountDemo from '../Overview/CountDemo';
+import CodeAce from '@/components/CodeAce';
 
 function HookState () {
   return (
@@ -17,7 +18,7 @@ function HookState () {
       <h2>useState</h2>
       <DocLine>参数：初始state; 多个state, 重复使用useState</DocLine>
       <DocLine type="warn">
-        <p><code>const [count, setCount] = useState()</code></p>
+        <CodeAce code={"const [count, setCount] = useState()"}></CodeAce>
         <ul>
           <li>state: count</li>
           <li>this.setState: setCount</li>

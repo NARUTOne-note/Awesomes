@@ -2,6 +2,13 @@ import React from 'react';
 import DocLine from '@/components/DocLine';
 import Demo from '@/components/Demo';
 import CountDemo from '../Overview/CountDemo';
+import CodeAce from '@/components/CodeAce';
+
+const code = `
+useEffect(() => {
+  document.title = "You clicked times";
+}, [count]); // 仅在 count 更改时更新
+`
 
 function HookEffect () {
   return (
@@ -30,12 +37,8 @@ function HookEffect () {
       </DocLine>
       <DocLine type="warn">
         <ul>
-          <li>
-            <pre>
-              {`useEffect(() => {
-                document.title = "You clicked times";
-              }, [count]); // 仅在 count 更改时更新`}
-            </pre>
+          <li><CodeAce code={code}></CodeAce></li>
+          <li>            
             性能优化，避免无限制的每次渲染都调用
           </li>
           <li>确保数组中包含了所有外部作用域中会随时间变化并且在 effect 中使用的变量，否则你的代码会引用到先前渲染中的旧变量</li>

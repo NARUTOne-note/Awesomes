@@ -37,7 +37,12 @@ const HookRule = loadable(() => import('../pages/Hook/HookRule'), {
 const HookCustom = loadable(() => import('../pages/Hook/CustomHook'), {
   fallback: <LoadPage/>
 })
+const HookAPI = loadable(() => import('../pages/Hook/HookAPI'), {
+  fallback: <LoadPage/>
+})
 
+
+// nav
 const navsList: RouterProps<Object>[] = [
   {
     title: 'React API',
@@ -96,6 +101,12 @@ const navsList: RouterProps<Object>[] = [
         subTitle: '自定义',
         path: '/hook/custom',
         component: HookCustom
+      },
+      {
+        title: 'Hook API',
+        subTitle: '索引',
+        path: '/hook/api',
+        component: HookAPI
       }
     ]
   }

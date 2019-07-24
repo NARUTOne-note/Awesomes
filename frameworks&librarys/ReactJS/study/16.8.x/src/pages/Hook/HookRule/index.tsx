@@ -1,6 +1,49 @@
 import React from 'react';
 import DocLine from '@/components/DocLine';
 import Demo from '@/components/Demo';
+import CodeAce from '@/components/CodeAce';
+
+const ruleCode = `
+function Form() {
+  // 1. Use the name state variable
+  const [name, setName] = useState('Mary');
+
+  // 2. Use an effect for persisting the form
+  useEffect(function persistForm() {
+    localStorage.setItem('formData', name);
+  });
+
+  // 3. Use the surname state variable
+  const [surname, setSurname] = useState('Poppins');
+
+  // 4. Use an effect for updating the title
+  useEffect(function updateTitle() {
+    document.title = name + ' ' + surname;
+  });
+
+  // ...
+}
+`
+
+const ruleCode2 = `
+// ------------
+// 首次渲染
+// ------------
+useState('Mary')           // 1. 使用 'Mary' 初始化变量名为 name 的 state
+useEffect(persistForm)     // 2. 添加 effect 以保存 form 操作
+useState('Poppins')        // 3. 使用 'Poppins' 初始化变量名为 surname 的 state
+useEffect(updateTitle)     // 4. 添加 effect 以更新标题
+
+// -------------
+// 二次渲染
+// -------------
+useState('Mary')           // 1. 读取变量名为 name 的 state（参数被忽略）
+useEffect(persistForm)     // 2. 替换保存 form 的 effect
+useState('Poppins')        // 3. 读取变量名为 surname 的 state（参数被忽略）
+useEffect(updateTitle)     // 4. 替换更新标题的 effect
+
+// ...
+`
 
 function HookRule () {
   return (
@@ -28,54 +71,14 @@ function HookRule () {
       <DocLine><a href="https://react.docschina.org/docs/hooks-rules.html">Hook 规则</a></DocLine>
       <Demo title="Hook Rule">
         <DocLine>
-          <pre>
-            {
-              `
-                function Form() {
-                  // 1. Use the name state variable
-                  const [name, setName] = useState('Mary');
-
-                  // 2. Use an effect for persisting the form
-                  useEffect(function persistForm() {
-                    localStorage.setItem('formData', name);
-                  });
-
-                  // 3. Use the surname state variable
-                  const [surname, setSurname] = useState('Poppins');
-
-                  // 4. Use an effect for updating the title
-                  useEffect(function updateTitle() {
-                    document.title = name + ' ' + surname;
-                  });
-
-                  // ...
-                }
-              `
-           }
-          </pre>
-          <pre>
-            {
-              `
-                // ------------
-                // 首次渲染
-                // ------------
-                useState('Mary')           // 1. 使用 'Mary' 初始化变量名为 name 的 state
-                useEffect(persistForm)     // 2. 添加 effect 以保存 form 操作
-                useState('Poppins')        // 3. 使用 'Poppins' 初始化变量名为 surname 的 state
-                useEffect(updateTitle)     // 4. 添加 effect 以更新标题
-
-                // -------------
-                // 二次渲染
-                // -------------
-                useState('Mary')           // 1. 读取变量名为 name 的 state（参数被忽略）
-                useEffect(persistForm)     // 2. 替换保存 form 的 effect
-                useState('Poppins')        // 3. 读取变量名为 surname 的 state（参数被忽略）
-                useEffect(updateTitle)     // 4. 替换更新标题的 effect
-
-                // ...
-              `
-            }
-          </pre>
+          <ul>
+            <li>
+              <CodeAce code={ruleCode}></CodeAce>
+            </li>
+            <li>
+              <CodeAce code={ruleCode2}></CodeAce>
+            </li>
+          </ul>
         </DocLine>
       </Demo>
     </div>
