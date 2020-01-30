@@ -1,4 +1,4 @@
-### Welcome to use ReactJS
+# Welcome to use ReactJS
 
 - [ReactJS](https://facebook.github.io/react/)
 - [react china](https://doc.react-china.org/)
@@ -8,7 +8,7 @@
 
 ## react
 
-![](https://raw.githubusercontent.com/NARUTOne/resources-github/master/imgs/react/react-life.png)
+![react-life](https://raw.githubusercontent.com/NARUTOne/resources-github/master/imgs/react/react-life.png)
 
 - [React组件的生命周期](https://github.com/chemdemo/chemdemo.github.io/issues/14)
 - [React 应用架构设计](https://mp.weixin.qq.com/s/cI26iodw302vyRzl3XGyGQ)
@@ -16,15 +16,16 @@
 
 ### 组件通信
 
-![](https://raw.githubusercontent.com/NARUTOne/resources-github/master/imgs/react/react_connect.jpg)
+![react_coonect](https://raw.githubusercontent.com/NARUTOne/resources-github/master/imgs/react/react_connect.jpg)
 
 ### 高阶组件HOC
 
-- [react进阶之高阶组件 ](https://github.com/sunyongjian/blog/issues/25)
+- [react进阶之高阶组件](https://github.com/sunyongjian/blog/issues/25)
 
 ## redux
 
 createStore方法的一个简单实现，可以了解一下 Store 是怎么生成的。
+
 ```js
 const createStore = (reducer) => {
   let state;
