@@ -59,3 +59,29 @@ const createStore = (reducer) => {
 - [react 权限](http://blog.hypers.io/2017/07/22/react-permission/)
 - [react-router 4.x 升级小记](http://mp.weixin.qq.com/s/5j1Bd5hazOo6jqOuAiWsGA)
 - [Redux 异步数据流方案对比](https://juejin.im/post/59e6cd68f265da43163c2821#heading-3)
+
+## 源码学习
+
+[1]
+[build-your-own-react](https://pomb.us/build-your-own-react/)
+
+[2]
+[React技术揭秘](http://react.iamkasong.com/)
+
+[3]
+[理念篇](https://react.iamkasong.com/)
+
+[4]
+[极简useState实现](https://react.iamkasong.com/hooks/create.html)
+
+[5]
+[架构篇](https://react.iamkasong.com/process/reconciler.html)
+
+[6]
+[状态更新](https://react.iamkasong.com/state/prepare.html)
+
+[7]
+[架构篇](https://react.iamkasong.com/process/reconciler.html)
+
+[8]
+[Diff算法](https://react.iamkasong.com/diff/prepare.html)
