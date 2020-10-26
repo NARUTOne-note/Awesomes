@@ -13,6 +13,7 @@
 - [React组件的生命周期](https://github.com/chemdemo/chemdemo.github.io/issues/14)
 - [React 应用架构设计](https://mp.weixin.qq.com/s/cI26iodw302vyRzl3XGyGQ)
 - [React 性能优化大挑战：一次理解 Immutable data 跟 shouldComponentUpdate](http://web.jobbole.com/93614/)
+- [传统diff、react优化diff、vue优化diff](https://www.jianshu.com/p/398e63dc1969)
 
 ### 组件通信
 
@@ -62,26 +63,20 @@ const createStore = (reducer) => {
 
 ## 源码学习
 
-[1]
-[build-your-own-react](https://pomb.us/build-your-own-react/)
+- [React技术揭秘](https://github.com/BetaSu/just-react)
 
-[2]
-[React技术揭秘](http://react.iamkasong.com/)
+- [build-your-own-react](https://pomb.us/build-your-own-react/)
 
-[3]
-[理念篇](https://react.iamkasong.com/)
+- [React技术揭秘](http://react.iamkasong.com/)
 
-[4]
-[极简useState实现](https://react.iamkasong.com/hooks/create.html)
+- [理念篇](https://react.iamkasong.com/)
 
-[5]
-[架构篇](https://react.iamkasong.com/process/reconciler.html)
+- [极简useState实现](https://react.iamkasong.com/hooks/create.html)
 
-[6]
-[状态更新](https://react.iamkasong.com/state/prepare.html)
+- [架构篇](https://react.iamkasong.com/process/reconciler.html)
 
-[7]
-[架构篇](https://react.iamkasong.com/process/reconciler.html)
+- [状态更新](https://react.iamkasong.com/state/prepare.html)
 
-[8]
-[Diff算法](https://react.iamkasong.com/diff/prepare.html)
+- [架构篇](https://react.iamkasong.com/process/reconciler.html)
+
+- [Diff算法](https://react.iamkasong.com/diff/prepare.html)
