@@ -160,6 +160,8 @@ Renderer根据Reconciler为虚拟DOM打的标记，同步执行对应的DOM操�
 
 ### Fiber 实现
 
+![fiber-tree 递归](./fiber.png)
+
 Fiber节点的属性定义
 
 ```js
