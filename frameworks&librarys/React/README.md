@@ -63,13 +63,9 @@ const createStore = (reducer) => {
 
 ## 源码学习
 
-- [React技术揭秘](https://github.com/BetaSu/just-react)
+- [React技术理念揭秘](https://github.com/BetaSu/just-react)
 
 - [build-your-own-react](https://pomb.us/build-your-own-react/)
-
-- [React技术揭秘](http://react.iamkasong.com/)
-
-- [理念篇](https://react.iamkasong.com/)
 
 - [极简useState实现](https://react.iamkasong.com/hooks/create.html)
 
