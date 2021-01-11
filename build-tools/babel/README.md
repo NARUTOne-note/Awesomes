@@ -94,6 +94,9 @@
 }
 ```
 
+- 使用 `--out-file` 或着 `-o` 可以将结果写入到指定的文件
+- 编译成一个新的目录，可以使用 `--out-dir` 或者 `-d`
+
 ## 自定义插件
 
 - [类 babel-plugin-import](https://juejin.im/post/5d94bfbf5188256db95589be#heading-7)
