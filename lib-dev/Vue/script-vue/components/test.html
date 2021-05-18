@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+	<div id="app">
+		<currency-input v-model="someText"></currency-input>
+		<p>{{someText}}</p>
+		<component v-bind:is="viewComponent" :text='someText'>
+			<h3 class="title" slot="title">card title</h3>
+		</component>
+	</div>
+</body>
+<script>
+	// components	
+	Vue.component('currency-input', {
+		template: '\
+		<span>\
+		 $\
+		 <input\
+		 	ref="input"\
+      v-bind:value="value"\
+      v-on:input="updateValue($event.target.value)"\
+      >\
+		</span>',
+		props: ['value'],
+		methods: {
+			// 更新值
+	    updateValue: function (value) {
+	      // 通过 input 事件带出数值
+	      this.$emit('input', value)
+	    }
+		}
+	});
+
+	var Card = {
+		template: '<div class="card"><div><slot name="title"/></div><p>{{ text }}</p><button @click="outputClick()">输出</button></div>',
+		props:{
+			text: {
+				type: String,
+				default: ''
+			}
+		},
+		methods: {
+			outputClick: function() {
+				alert(this.text);
+			}
+		}
+	}
+	
+	// 创建根实例
+	new Vue({
+	  el: '#app',
+	  data: {
+	  	someText: '',
+	  	viewComponent: 'Card'
+	  },
+	  components: {
+	  	'Card': Card
+	  }
+	});
+
+</script>
+</html>

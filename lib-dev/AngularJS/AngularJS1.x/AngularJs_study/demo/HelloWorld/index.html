@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="zh" ng-app='app'>
+	<head>
+		<meta charset="UTF-8">
+		<title>学习AngularJs1.x</title>
+	</head>
+	<body>
+		<ng-include src="'./header.html'"></ng-include>
+		<h2>{{'Hello World !'}}</h2>
+		<h2>{{"Hello World !"}}</h2>
+		<h3>{{1 + 3}}</h3>
+		<h3>{{1 + '3'}}</h3>
+		<div ng-controller='myControl'>
+			<h3>双向绑定</h3>
+			<input type="text" ng-model='data.message' />
+			<b>{{'绑定显示：' + data.message}}</b>
+			<h3>自定义过滤</h3>
+			<b>{{data.message | reverse}}</b>
+			<h3>显隐</h3>
+			<input type="checkbox" ng-model="data.flag">通过复选框来控制文字是否显示
+
+			<!-- 如果data.flag == true,则显示此段文字-->
+			<div ng-if="data.flag">
+			    <p>ng-if中的文字</p>
+			</div>
+			
+			<!-- 如果data.flag == true,则显示此段文字-->
+			<div ng-show="data.flag">
+			    <p>ng-show中的文字</p>
+			</div>
+			
+			<!-- 如果data.flag == false,则显示此段文字-->
+			<div ng-hide="data.flag">
+			    <p>ng-hide中的文字</p>
+			</div>
+			<h3>循环</h3>
+			<table>
+				<thead>
+					<tr>
+						<td>姓名</td>
+						<td>性别</td>
+						<td>年龄</td>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat='item in arrList'>
+						<td>{{item.name}}</td>
+						<td>{{item.sex?'男':'女'}}</td>
+						<td>{{item.age | number:2}}</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</body>
+	<script src="../../lib/angular/angular.js"></script>
+	<script type="text/javascript">
+		var App = angular.module('app',[]);
+		
+		App.controller('myControl', function($scope) {
+			$scope.data = {
+				message: 'hello world !',
+				flag:false
+			}
+			
+			$scope.arrList = [
+				{
+					name:'张三',
+					sex: 1,
+					age: 23
+				},
+				{
+					name:'小明',
+					sex: 1,
+					age: 23
+				},
+				{
+					name:'李四',
+					sex: 1
+				},
+				{
+					name:'小红',
+					sex: 0,
+					age: 23
+				}
+			]
+		})
+		
+		App.filter('reverse', function() {
+			return function(text) {
+				return text.split('').reverse().join('');
+			}
+		})
+	</script>
+</html>
