@@ -6,7 +6,7 @@ import { multicast } from 'rxjs/operators';
  * Subject 是一种特殊类型的 Observable，它允许将值多播给多个观察者，所以 Subject 是多播的，而普通的 Observables 是单播的(每个已订阅的观察者都拥有 Observable 的独立执行)
  * 每个 Subject 都是 Observable ，从观察者的角度而言，它无法判断 Observable 执行是来自普通的 Observable 还是 Subject 
  * 每个 Subject 都是观察者。 - Subject 是一个有如下方法的对象： next(v)、error(e) 和 complete() 
- * 要给 Subject 提供新值，只要调用 next(theValue)，它会将值多播给已注册监听该 Subject 的观察者们
+ * 要给 Subject 提供新值，只要任意地方调用 next(theValue)，它会将值多播给已注册监听该 Subject 的观察者们
  * 多播 Observable 在底层是通过使用 Subject 使得多个观察者可以看见同一个 Observable 执行
  */
 

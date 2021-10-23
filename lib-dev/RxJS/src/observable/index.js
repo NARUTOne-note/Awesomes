@@ -1,4 +1,4 @@
-import { Observable } from 'rxjs';
+import { Observable, of, from, fromEvent, fromFetch, bindCallback, bindNodeCallback } from 'rxjs';
 
 /**
  * Observables 是多个值的惰性推送集合
@@ -83,3 +83,26 @@ const fooSubscription = foo.subscribe(y => {
 
 // 清理Observable执行
 fooSubscription.unsubscribe();
+
+// ! 创建observable方式 举例
+
+// 一个或多个值
+of(1, 2)
+
+// 数组
+from([1, 2])
+
+// 事件
+fromEvent(document.getElementById('btn'), 'click')
+
+// 请求
+fromFetch('/users');
+
+// 回调函数 
+// fs.exists = (path, cb(exists))
+const exists = bindCallback(fs.exists)
+exists('test.txt').subscribe(ex => console.log('file exist?', ex))
+
+// fs.rename = (pathA, pathB, cb(err, result))
+const rename = bindNodeCallback(fs.rename);
+rename('file.txt', 'else.txt').subscribe(() => console.log('Renamed!'));

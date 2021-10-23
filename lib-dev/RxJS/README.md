@@ -34,6 +34,38 @@ RxJS 引入了 **Observables**，一个新的 JavaScript 推送体系。Observab
 - Promise 是最终可能(或可能不)返回单个值的运算。
 - Observable 是惰性的评估运算，它可以从它被调用的时刻起同步或异步地返回零到(有可能的)无限多个值。
 
+## 创建操作符
+
+**指南**：
+
+- 操作符应该永远返回一个 Observable 。正在对一个未知的集合执行操作以创建一个新的集合。只有返回一个新的集合才有意义。如果你创建 了一个返回非 Observable 的方法，那么它就不是一个操作符
+- 确保对你的操作符返回的 Observalbe 内部所创建的 subscriptions 进行管理。你的操作符需要订阅返回 Observable 中的源(或 this)， 确保它是作为取消订阅处理方法或 subscription 的一部分返回的。
+- 确保处理传入函数中的异常。如果你实现的操作符接收函数作为参数，当你调用它时，你会想要将其包裹在 try/catch 中并发送 错误到 observable 的 error() 路径。
+- 确保在返回的 Observable 的取消订阅处理方法中释放稀缺资源。如果你设置了事件处理方法，或 web socket，或一些其他类似的，取消订阅 方法是移除事件处理方法和关闭 socket 的好地方。
+
+```js
+function mySimpleOperator(someCallback) {
+   // 纯函数操作符
+   return (source) => new Observable(subscriber => {
+     // 保存我们的内部 subscription
+     var subscription = source.subscribe(value => {
+       // 重点：从用户提供的回调函数中捕获错误
+       try {
+         subscriber.next(someCallback(value));
+       } catch(err) {
+         subscriber.error(err);
+       }
+     },
+     // 确保处理错误，然后视情况而定进行完成并发送它们
+     err => subscriber.error(err),
+     () => subscriber.complete());
+
+     // 现在返回
+     return subscription;
+   });
+}
+```
+
 ## 参考
 
 - [rxjs API](https://rxjs.dev/api)
