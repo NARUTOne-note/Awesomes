@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "demo-es6": "node parseToModules"
+    "demo-es6": "node parseToModules",
+    "change-env": "node changeEnv.js"
   },
   "keywords": [],
   "author": "",
