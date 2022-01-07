@@ -35,6 +35,8 @@ yarn add rollup rollup-plugin-filesize rollup-plugin-postcss rollup-plugin-terse
 yarn add husky is-ci lint-staged --dev
 
 # test
-
+yarn add jest babel-jest jest-resolve @types/jest --dev 
+yarn add @testing-library/jest-dom @testing-library/react @testing-library/user-event --dev 
+yarn add identity-obj-proxy eslint-plugin-jest --dev 
 
 ```
