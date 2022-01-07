@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "allowJs": true,
+    "skipLibCheck": true, // 跳过默认库的类型文件检查
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true, // 允许从没有设置默认导出的模块中默认导入
+    "strict": true, // 启用所有严格类型检查选项
+    "forceConsistentCasingInFileNames": true, // 文件名区分大小写检查
+    "noFallthroughCasesInSwitch": true, // 报告 switch 语句的 fallthrough 错误。（即，不允许 switch 的 case 语句贯穿）
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true, // 解析.JSON模块
+    "isolatedModules": true, // 将每个文件作为单独的模块
+    "noEmit": true,  // 不生成输出文件
+    "jsx": "react-jsx"
+  },
+  "include": [
+    "src"
+  ]
+}

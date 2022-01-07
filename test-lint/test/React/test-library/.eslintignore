@@ -1,0 +1,9 @@
+node_modules/
+lib/
+dist/
+static/
+/dll
+/docs
+/build
+/config
+/script
