@@ -7,9 +7,7 @@ module.exports = {
     "src/**/*.{js,jsx,ts,tsx}",
     "!src/**/*.d.ts"
   ],
-  "setupFiles": [
-    "react-app-polyfill/jsdom"
-  ],
+  "setupFiles": [],
   "setupFilesAfterEnv": [
     "<rootDir>/tests/setupTests.ts"
   ],
@@ -30,7 +28,9 @@ module.exports = {
   "modulePaths": [],
   "moduleNameMapper": {
     "^react-native$": "react-native-web",
-    "^.+\\.module\\.(css|less|sass|scss)$": "identity-obj-proxy"
+    "^.+\\.module\\.(css|less|sass|scss)$": "identity-obj-proxy",
+    "\\.svg$": "identity-obj-proxy",
+    "antd/es/(.*)": "antd/lib/$1",
   },
   "moduleFileExtensions": [
     "web.js",

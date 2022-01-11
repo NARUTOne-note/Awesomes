@@ -1,0 +1,53 @@
+@import '../styles/variables.less';
+@title-tag-prefix-cls: '-title-tag';
+
+.tag-title-common {
+  float: left;
+  color: @light;
+  line-height: 31px;
+  width: 160px;
+  padding-left: @space-sm;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.@{title-tag-prefix-cls} {
+  font-size: 14px;
+  margin-top: 8px;
+  &-title {
+    height: 0;
+    .tag-title-common();
+    border-top-right-radius: 27px;
+    border-top-left-radius: 4px;
+    border-left: 0 solid transparent;
+    border-right: 20px solid transparent;
+    border-bottom: 32px solid @default-color;
+    transition: all 0.5s;
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+  &-tag {
+    .tag-title-common();
+    height: 31px;
+    border-radius: 4px;
+    padding: 0;
+    transition: all 0.5s;
+    background-color: @default-color;
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+  &-bar {
+    .tag-title-common();
+    color: @text-color;
+    text-align: left;
+    transition: all 0.5s;
+    line-height: 20px;
+    border-left: 3px solid @default-color;
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+}

@@ -19,6 +19,17 @@ module.exports = function (api) {
           corejs: 3,
         },
       ],
+      [
+        "import",
+        [
+          { "libraryName": "antd", "libraryDirectory": "lib", "style": true },
+          {
+            "libraryName": "@ant-design/icons",
+            "libraryDirectory": "es/icons",
+            "camel2DashComponentName": false
+          }
+        ]
+      ]
     ]
   }
 }

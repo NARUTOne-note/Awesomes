@@ -1,0 +1,44 @@
+@import '../styles/variables.less';
+
+@sort-arrow-prefix-cls: 'sort-arrow';
+
+.@{sort-arrow-prefix-cls} {
+  user-select: none;
+  cursor: pointer;
+  &-icons {
+    display: inline-flex;
+    flex-direction: column;
+    vertical-align: middle;
+    line-height: 0;
+    cursor: pointer;
+  }
+  &-title-l {
+    margin-right: 8px;
+  }
+  &-title-r {
+    margin-left: 8px;
+  }
+  span.i-span {
+    position: relative;
+    color: @disabled-color;
+    transition: color 0.2s ease-in-out;
+    &:first-child {
+      bottom: -2px;
+    }
+    &:last-child {
+      top: -2px;
+    }
+    &:only-child {
+      top: -2px;
+    }
+  }
+  span.active {
+    color: @default-color;
+  }
+  span.expand-icon {
+    transition: all 0.4s;
+  }
+  span.expand-icon-down {
+    transform: rotate(180deg);
+  }
+}

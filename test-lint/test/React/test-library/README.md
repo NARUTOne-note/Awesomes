@@ -2,6 +2,9 @@
 
 > [React test library](https://testing-library.com/docs/react-testing-library/intro) Demo
 
+- [@testing-library/react](https://testing-library.com/docs/react-testing-library/intro)
+- [@testing-library/react-hooks](https://react-hooks-testing-library.com/)
+
 ## install
 
 ```bash
@@ -39,4 +42,15 @@ yarn add jest babel-jest jest-resolve @types/jest --dev
 yarn add @testing-library/jest-dom @testing-library/react @testing-library/user-event --dev 
 yarn add identity-obj-proxy eslint-plugin-jest --dev 
 
+```
+
+## guide
+
+1、`@testing-library/jest-dom`添加了一些额外的匹配器，用来测试dom, 需要将它加入`jest`的配置，同时将jest环境设置为`jsdom`
+
+```js
+module.exports = {
+  setupFilesAfterEnv: ["@testing-library/jest-dom"],
+  testEnvironment: "jsdom",
+};
 ```

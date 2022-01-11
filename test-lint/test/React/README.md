@@ -6,3 +6,13 @@
 - [jest](https://jestjs.io/zh-Hans/)
 - [React test library](https://testing-library.com/docs/react-testing-library/intro)
 - [enzyme](https://enzymejs.github.io/enzyme/)
+
+## 比较
+
+- `enzyme` 用于保证 React 组件的输入输出结构
+- `testing-library` 的特性
+  - 不面向具体组件代码进行测试
+  - 面向最终 DOM 进行测试（Query）
+  - 模拟用户的交互方式（fireEvent）
+  - 也支持除了 React 以外的其他 UI 框架
+  
