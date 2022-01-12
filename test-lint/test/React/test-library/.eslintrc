@@ -60,6 +60,7 @@
 
     "import/prefer-default-export": 0,
 
+    "@typescript-eslint/naming-convention": 0,
     "@typescript-eslint/no-unused-expressions": [
       "error",
       { "allowShortCircuit": true }

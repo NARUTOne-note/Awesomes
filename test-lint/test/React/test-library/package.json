@@ -2,7 +2,20 @@
   "name": "test-library-react-demo",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "lib/index.js",
+  "module": "es/index.js",
+  "unpkg": "dist/graph-g6-core.min.js",
+  "types": "lib/index.d.ts",
+  "files": [
+    "dist",
+    "es",
+    "lib"
+  ],
+  "sideEffects": [
+    "es/**/style/*",
+    "lib/**/style/*",
+    "*.less"
+  ],
   "scripts": {
     "prettier": "prettier --write **/*.{js,jsx,tsx,ts,less,md,json}",
     "postinstall": "is-ci || husky install configs/husky-config",
@@ -11,12 +24,12 @@
     "clean": "rimraf dist es lib",
     "lint": "yarn lint-es && yarn lint-style",
     "lint-es": "eslint --fix --cache --ext .js,.jsx,.ts,.tsx ./src",
-    "lint-style": "stylelint --fix \"src/**/*.less\" --syntax less",
-    "build:esm": "tsc --module esnext --target es2015 --outDir ./es",
-    "build:cjs": "tsc --module commonjs --target es5 --outDir ./lib",
+    "lint-style": "stylelint --fix \"src/**/*.less\"",
+    "build:esm": "tsc --module esnext --target es2015 --outDir es",
+    "build:cjs": "tsc --module commonjs --target es5 --outDir lib",
     "build:umd": "rollup -c",
     "build:ts": "yarn build:cjs && yarn build:esm && yarn build:umd",
-    "build:less": "node ../../scripts/less.js",
+    "build:less": "node ./scripts/less.js",
     "build": "yarn build:ts && yarn build:less",
     "prebuild": "yarn lint && yarn clean",
     "test": "jest --coverage"
@@ -35,6 +48,7 @@
     ]
   },
   "dependencies": {
+    "@ant-design/icons": "^4.7.0",
     "antd": "^4.18.2",
     "classnames": "^2.3.1",
     "react": "^17.0.2",
@@ -46,6 +60,7 @@
     "@babel/plugin-transform-runtime": "^7.16.7",
     "@babel/preset-env": "^7.16.7",
     "@babel/preset-react": "^7.16.7",
+    "@babel/preset-typescript": "^7.16.7",
     "@babel/runtime": "^7.16.7",
     "@babel/runtime-corejs3": "^7.16.7",
     "@commitlint/cli": "^16.0.1",
@@ -66,6 +81,8 @@
     "babel-jest": "^27.4.6",
     "babel-plugin-import": "^1.13.3",
     "browserslist": "^4.19.1",
+    "camelcase": "^6.3.0",
+    "chalk": "4.1.0",
     "core-js": "^3.20.2",
     "eslint": "^8.6.0",
     "eslint-config-airbnb-base": "^15.0.0",
@@ -73,6 +90,7 @@
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-import": "^2.25.4",
     "eslint-plugin-jest": "^25.3.4",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
     "eslint-plugin-react": "^7.28.0",
     "eslint-plugin-react-hooks": "^4.3.0",
     "husky": "^7.0.4",
@@ -80,7 +98,9 @@
     "is-ci": "^3.0.1",
     "jest": "^27.4.7",
     "jest-resolve": "^27.4.6",
+    "less": "^4.1.2",
     "lint-staged": "^12.1.5",
+    "postcss": "^8.4.5",
     "prettier": "^2.5.1",
     "rollup": "^2.63.0",
     "rollup-plugin-filesize": "^9.1.1",
@@ -91,7 +111,14 @@
     "stylelint-config-rational-order": "^0.1.2",
     "stylelint-config-standard": "^24.0.0",
     "stylelint-declaration-block-no-ignored-properties": "^2.5.0",
-    "stylelint-order": "^5.0.0"
+    "stylelint-order": "^5.0.0",
+    "ts-jest": "^27.1.2"
+  },
+  "peerDependencies": {
+    "@ant-design/icons": ">=4.3",
+    "antd": ">= 4.9.0",
+    "react": ">=16.8.0",
+    "react-dom": ">=16.8.0"
   },
   "browserslist": {
     "production": [

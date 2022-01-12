@@ -10,29 +10,29 @@ describe('test span-edit', () => {
       const handleChange = (e: any) => {
         setV(e.target.value);
         onChange && onChange(e.target.value);
-      }
+      };
 
-      return <SpanEdit data-testid="default-span-edit" value={v} onChange={handleChange}>
+      return <SpanEdit value={v} onChange={handleChange}>
         <span className="span-edit-child">{v}</span>
-      </SpanEdit>
-    }
-    const { getByTestId, baseElement } = render(<Demo onChange={fn}/>);
+      </SpanEdit>;
+    };
+    const { baseElement } = render(<Demo onChange={fn}/>);
 
     // 通过data-testid的方式来获取元素
-    const spanEdit = getByTestId("default-span-edit");
+    const spanEdit = baseElement.getElementsByClassName('span-edit');
     const elChild = baseElement.getElementsByClassName('span-edit-child');
     const el = baseElement.getElementsByClassName('span-edit-edit');
     expect(elChild.length).toBe(1);
     expect(el.length).toBe(0);
 
     // 模拟事件
-    fireEvent.click(spanEdit);
+    fireEvent.click(spanEdit[0]);
     const input = baseElement.getElementsByTagName('input');
-    const saveIcon = baseElement.getElementsByTagName('span-edit-save');
+    const saveIcon = baseElement.getElementsByClassName('span-edit-save');
     expect(elChild.length).toBe(0);
     expect(el.length).toBe(1);
     expect(saveIcon.length).toBe(1);
-    fireEvent.change(input[0], { target: { value: 'hello test'} });
+    fireEvent.change(input[0], { target: { value: 'hello test' } });
     expect(fn).toBeCalledWith('hello test');
 
     // 保存
@@ -45,19 +45,19 @@ describe('test span-edit', () => {
   });
 
   test('disabled test', () => {
-    const { getByTestId, baseElement } = render(<SpanEdit data-testid="disabled-span-edit" disabled>hello</SpanEdit>);
-    const spanEdit = getByTestId("disabled-span-edit");
+    const { baseElement } = render(<SpanEdit disabled>hello</SpanEdit>);
+    const spanEdit = baseElement.getElementsByClassName('span-edit');
     const el = baseElement.getElementsByClassName('span-edit-edit');
-    fireEvent.click(spanEdit);
+    fireEvent.click(spanEdit[0]);
     expect(el.length).toBe(0);
   });
 
   test('useGlobal test', () => {
-    const { getByTestId, baseElement } = render(<SpanEdit data-testid="global-span-edit" useGlobal>hello</SpanEdit>);
-    const spanEdit = getByTestId("global-span-edit");
+    const { baseElement } = render(<SpanEdit useGlobal>hello</SpanEdit>);
+    const spanEdit = baseElement.getElementsByClassName('span-edit');
     let el = baseElement.getElementsByClassName('span-edit-edit');
-    fireEvent.click(spanEdit);
-    const saveIcon = baseElement.getElementsByTagName('span-edit-save');
+    fireEvent.click(spanEdit[0]);
+    const saveIcon = baseElement.getElementsByClassName('span-edit-save');
     expect(el.length).toBe(1);
     expect(saveIcon.length).toBe(0);
 
@@ -73,21 +73,21 @@ describe('test span-edit', () => {
       const handleChange = (e: any) => {
         setV(e.target.value);
         onChange && onChange(e.target.value);
-      }
+      };
 
-      return <SpanEdit data-testid="custom-span-edit" renderEdit={
+      return <SpanEdit renderEdit={
         () => <select className="custom-select" value={v} onChange={handleChange}>
           <option value="1">是</option>
           <option value="2">否</option>
         </select>
       }>
         <span className="span-edit-child">{v === '1' ? '是' : '否'}</span>
-      </SpanEdit>
-    }
-    const { getByTestId, baseElement } = render(<Demo onChange={fn}/>);
+      </SpanEdit>;
+    };
+    const { baseElement } = render(<Demo onChange={fn}/>);
 
     // 通过data-testid的方式来获取元素
-    const spanEdit = getByTestId("custom-span-edit");
+    const spanEdit = baseElement.getElementsByClassName('span-edit');
     let elChild = baseElement.getElementsByClassName('span-edit-child');
     let el = baseElement.getElementsByClassName('span-edit-edit');
     expect(elChild.length).toBe(1);
@@ -95,25 +95,25 @@ describe('test span-edit', () => {
     expect(elChild[0].textContent).toBe('是');
 
     // 模拟事件
-    fireEvent.click(spanEdit);
-    let select = baseElement.getElementsByTagName('custom-select');
-    const saveIcon = baseElement.getElementsByTagName('span-edit-save');
+    fireEvent.click(spanEdit[0]);
+    let select = baseElement.getElementsByClassName('custom-select');
+    const saveIcon = baseElement.getElementsByClassName('span-edit-save');
     elChild = baseElement.getElementsByClassName('span-edit-child');
     el = baseElement.getElementsByClassName('span-edit-edit');
     expect(elChild.length).toBe(0);
     expect(el.length).toBe(1);
     expect(saveIcon.length).toBe(1);
-    fireEvent.change(select[0], { target: { value: '2'} });
+    fireEvent.change(select[0], { target: { value: '2' } });
     expect(fn).toBeCalledWith('2');
 
     // 保存
     fireEvent.click(saveIcon[0]);
     elChild = baseElement.getElementsByClassName('span-edit-child');
     el = baseElement.getElementsByClassName('span-edit-edit');
-    select = baseElement.getElementsByTagName('custom-select');
+    select = baseElement.getElementsByClassName('custom-select');
     expect(elChild.length).toBe(1);
     expect(el.length).toBe(0);
     expect(select.length).toBe(0);
     expect(elChild[0].textContent).toBe('否');
   });
-})
+});

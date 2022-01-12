@@ -6,9 +6,9 @@ import {
   VerticalRightOutlined,
   VerticalLeftOutlined,
 } from '@ant-design/icons';
-import './index.less';
+import './style/index.less';
 
-interface SortArrowProps {
+export interface SortArrowProps {
   lText?: React.ReactNode;
   rText?: React.ReactNode;
   mode?: string,
@@ -16,7 +16,7 @@ interface SortArrowProps {
   defaultIndex?: Number,
   onChange?: (index: number) => void,
   icon?: React.ReactNode[];
-};
+}
 
 const SortArrow: React.FC<SortArrowProps> = (props) => {
   const { lText, rText, mode, icon } = props;

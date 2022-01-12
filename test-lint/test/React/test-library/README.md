@@ -15,15 +15,18 @@ yarn add react react-dom
 yarn add typescript
 yarn add @types/node @types/react @types/react-dom --dev
 
+# less
+yarn add less postcss --dev 
+
 # 编译
-yarn add @babel/core @babel/preset-env @babel/preset-react --dev
+yarn add @babel/core @babel/preset-env @babel/preset-react @babel/preset-typescript --dev
 yarn add core-js @babel/plugin-transform-runtime @babel/runtime @babel/runtime-corejs3 --dev
 
 # browserslist
 yarn add browserslist --dev
 
 # lint
-yarn add @typescript-eslint/eslint-plugin @typescript-eslint/parser eslint eslint-config-airbnb-base eslint-config-airbnb-typescript eslint-config-prettier eslint-plugin-import eslint-plugin-react eslint-plugin-react-hooks --dev
+yarn add @typescript-eslint/eslint-plugin @typescript-eslint/parser eslint eslint-config-airbnb-base eslint-config-airbnb-typescript eslint-config-prettier eslint-plugin-import eslint-plugin-react eslint-plugin-react-hooks eslint-plugin-jsx-a11y --dev
 
 yarn add prettier stylelint-config-prettier eslint-config-prettier --dev
 
@@ -38,7 +41,7 @@ yarn add rollup rollup-plugin-filesize rollup-plugin-postcss rollup-plugin-terse
 yarn add husky is-ci lint-staged --dev
 
 # test
-yarn add jest babel-jest jest-resolve @types/jest --dev 
+yarn add jest babel-jest ts-jest jest-resolve @types/jest --dev 
 yarn add @testing-library/jest-dom @testing-library/react @testing-library/user-event --dev 
 yarn add identity-obj-proxy eslint-plugin-jest --dev 
 

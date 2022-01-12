@@ -20,7 +20,7 @@ export default {
       },
     },
   ],
-  external: ['react', 'react-dom'],
+  external: ['react', 'react-dom', 'antd', '@ant-design/icons'],
   plugins: [
     typescript({ declaration: false }),
     resolve(),

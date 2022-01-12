@@ -1,23 +1,23 @@
 import React from 'react';
 import classnames from 'classnames';
-import './index.less';
+import './style/index.less';
 
 export enum modeEnum {
   Title = 'title',
   Tag = 'tag',
-  Bar = 'bar'
+  Bar = 'bar',
 }
-export interface TitleTag {
+export interface TitleTagProps {
   className?: string;
   mode?: modeEnum;
   color?: string;
   extra?: React.ReactNode;
 }
 
-const TitleTag: React.FC<TitleTag> = React.memo((props) => {
+const TitleTag: React.FC<TitleTagProps> = React.memo((props) => {
   const { className, children, mode, color, extra, ...others } = props;
   const prefixCls = 'title-tag';
-  let style: React.CSSProperties | undefined = undefined;
+  let style: React.CSSProperties | undefined;
   if (color) {
     style =
       mode === modeEnum.Tag

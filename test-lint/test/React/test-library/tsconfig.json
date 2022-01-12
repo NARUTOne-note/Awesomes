@@ -6,6 +6,7 @@
       "dom.iterable",
       "esnext"
     ],
+    "declaration": true, // 生成相应的 '.d.ts' 文件
     "allowJs": true,
     "skipLibCheck": true, // 跳过默认库的类型文件检查
     "esModuleInterop": true,
@@ -13,14 +14,23 @@
     "strict": true, // 启用所有严格类型检查选项
     "forceConsistentCasingInFileNames": true, // 文件名区分大小写检查
     "noFallthroughCasesInSwitch": true, // 报告 switch 语句的 fallthrough 错误。（即，不允许 switch 的 case 语句贯穿）
+    "noImplicitAny": true, // 在表达式和声明上有隐含的 any类型时报错
+    "noEmitOnError": true, // 报错时，不导出
+    "noUnusedLocals": true, // 有未使用的变量时，抛出错误
+    "strictNullChecks": true, // 启用严格的 null 检查
+    "experimentalDecorators": true, // 启用装饰器
     "module": "esnext",
     "moduleResolution": "node",
     "resolveJsonModule": true, // 解析.JSON模块
     "isolatedModules": true, // 将每个文件作为单独的模块
-    "noEmit": true,  // 不生成输出文件
     "jsx": "react-jsx"
   },
-  "include": [
-    "src"
-  ]
+  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/index.ts"],
+  "exclude": [
+    "node_modules",
+    "es",
+    "lib",
+    "dist",
+    "src/**/__tests__",
+],
 }

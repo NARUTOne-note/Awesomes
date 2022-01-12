@@ -1,12 +1,19 @@
 module.exports = {
   "roots": [
-    "<rootDir>/src"
+    "<rootDir>/src",
+    "<rootDir>/tests/"
   ],
-  collectCoverage: true,
+  "collectCoverage": true,
   "collectCoverageFrom": [
     "src/**/*.{js,jsx,ts,tsx}",
     "!src/**/*.d.ts"
   ],
+  "globals": {
+    "ts-jest": {
+      // 编译 Typescript 所依赖的配置
+      tsconfig: '<rootDir>/tsconfig.test.json',
+    }
+  },
   "setupFiles": [],
   "setupFilesAfterEnv": [
     "<rootDir>/tests/setupTests.ts"
@@ -17,31 +24,28 @@ module.exports = {
   ],
   "testEnvironment": "jsdom",
   "transform": {
-    "^.+\\.(js|jsx|mjs|cjs|ts|tsx)$": "<rootDir>/configs/jest/babelTransform.js",
+    "^.+\\.tsx?$": "ts-jest",
+    "^.+\\.jsx?$": "babel-jest",
     "^.+\\.css$": "<rootDir>/configs/jest/cssTransform.js",
     "^(?!.*\\.(js|jsx|mjs|cjs|ts|tsx|css|json)$)": "<rootDir>/configs/jest/fileTransform.js"
   },
   "transformIgnorePatterns": [
     "[/\\\\]node_modules[/\\\\].+\\.(js|jsx|mjs|cjs|ts|tsx)$",
-    "^.+\\.module\\.(css|sass|scss)$"
+    "^.+\\.module\\.(css|less|sass|scss)$"
   ],
-  "modulePaths": [],
   "moduleNameMapper": {
     "^react-native$": "react-native-web",
     "^.+\\.module\\.(css|less|sass|scss)$": "identity-obj-proxy",
     "\\.svg$": "identity-obj-proxy",
+    "\\.(jpg|jpeg|png|gif)$": "<rootDir>/configs/jest/fileMock.ts",
     "antd/es/(.*)": "antd/lib/$1",
   },
   "moduleFileExtensions": [
-    "web.js",
     "js",
-    "web.ts",
+    "jsx",
     "ts",
-    "web.tsx",
     "tsx",
     "json",
-    "web.jsx",
-    "jsx",
     "node"
   ],
   "resetMocks": true

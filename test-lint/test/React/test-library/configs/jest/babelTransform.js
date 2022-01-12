@@ -2,27 +2,18 @@
 
 const babelJest = require('babel-jest').default;
 
-const hasJsxRuntime = (() => {
-  if (process.env.DISABLE_NEW_JSX_TRANSFORM === 'true') {
-    return false;
-  }
-
-  try {
-    require.resolve('react/jsx-runtime');
-    return true;
-  } catch (e) {
-    return false;
-  }
-})();
-
 module.exports = babelJest.createTransformer({
   presets: [
     [
-      require.resolve('babel-preset-react-app'),
+      require.resolve('@babel/preset-env'),
       {
-        runtime: hasJsxRuntime ? 'automatic' : 'classic',
+        modules: false,
+        useBuiltIns: 'usage',
+        corejs: 3,
       },
     ],
+    require.resolve('@babel/preset-react'),
+    require.resolve("@babel/preset-typescript"),
   ],
   babelrc: false,
   configFile: false,

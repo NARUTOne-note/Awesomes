@@ -1,51 +1,57 @@
-@import '../styles/variables.less';
-@title-tag-prefix-cls: '-title-tag';
+@import '../../style/variables.less';
+@title-tag-prefix-cls: title-tag;
 
 .tag-title-common {
   float: left;
-  color: @light;
-  line-height: 31px;
   width: 160px;
   padding-left: @space-sm;
-  text-align: center;
-  font-size: 14px;
+  color: @light;
   font-weight: 600;
+  font-size: 14px;
+  line-height: 31px;
+  text-align: center;
 }
 
 .@{title-tag-prefix-cls} {
-  font-size: 14px;
   margin-top: 8px;
+  font-size: 14px;
+
   &-title {
     height: 0;
-    .tag-title-common();
-    border-top-right-radius: 27px;
-    border-top-left-radius: 4px;
-    border-left: 0 solid transparent;
     border-right: 20px solid transparent;
     border-bottom: 32px solid @default-color;
+    border-left: 0 solid transparent;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 27px;
     transition: all 0.5s;
+    .tag-title-common();
+
     &:hover {
       opacity: 0.7;
     }
   }
+
   &-tag {
     .tag-title-common();
     height: 31px;
-    border-radius: 4px;
     padding: 0;
-    transition: all 0.5s;
     background-color: @default-color;
+    border-radius: 4px;
+    transition: all 0.5s;
+
     &:hover {
       opacity: 0.7;
     }
   }
+
   &-bar {
     .tag-title-common();
     color: @text-color;
-    text-align: left;
-    transition: all 0.5s;
     line-height: 20px;
+    text-align: left;
     border-left: 3px solid @default-color;
+    transition: all 0.5s;
+
     &:hover {
       opacity: 0.7;
     }

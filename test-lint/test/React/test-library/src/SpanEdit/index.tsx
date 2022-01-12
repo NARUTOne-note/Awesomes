@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Input } from 'antd';
 import CheckOutlined from '@ant-design/icons/CheckOutlined';
-import './index.less';
+import './style/index.less';
 
 export interface SpanEditProps {
   className?: string;
@@ -35,7 +35,7 @@ const SpanEdit: React.FC<SpanEditProps> = (props) => {
   if (edit && !props.disabled) {
     return (
       <span className={`${prefixCls}-edit`}>
-        {props.renderEdit ? props.renderEdit(toggle) : <Input style={{minWidth: 100}} value={props.value} onChange={props.onChange} onBlur={toggle}/>}
+        {props.renderEdit ? props.renderEdit(toggle) : <Input style={{ minWidth: 100 }} value={props.value} onChange={props.onChange} onBlur={toggle}/>}
         {!props.useGlobal && <CheckOutlined className={`${prefixCls}-save`} onClick={toggle}/>}
       </span>
     );
@@ -49,7 +49,7 @@ const SpanEdit: React.FC<SpanEditProps> = (props) => {
 };
 
 SpanEdit.defaultProps = {
-  useGlobal: false
+  useGlobal: false,
 };
 
 export default SpanEdit;
