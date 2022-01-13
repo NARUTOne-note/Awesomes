@@ -2,8 +2,10 @@ import React, { useState } from 'react';
 import { render, fireEvent } from '@testing-library/react';
 import SortArrow from '../index';
 
+
 describe('test sort-arrow', () => {
   test('default test', () => {
+    console.log(testVar);
     const fn = jest.fn();
     const Demo = ({ onChange }: any) => {
       const [v, setV] = useState(0);

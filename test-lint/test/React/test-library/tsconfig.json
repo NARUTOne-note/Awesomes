@@ -25,7 +25,7 @@
     "isolatedModules": true, // 将每个文件作为单独的模块
     "jsx": "react"
   },
-  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/index.ts"],
+  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/index.ts", "types/**/*.d.ts"],
   "exclude": [
     "node_modules",
     "es",

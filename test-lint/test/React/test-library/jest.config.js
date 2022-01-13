@@ -12,9 +12,9 @@ module.exports = {
     "ts-jest": {
       // 编译 Typescript 所依赖的配置
       tsconfig: '<rootDir>/tsconfig.test.json',
-    }
+    },
+    'testVar': 'testVar12'
   },
-  "setupFiles": [],
   "setupFilesAfterEnv": [
     "<rootDir>/tests/setupTests.ts"
   ],
@@ -50,3 +50,5 @@ module.exports = {
   ],
   "resetMocks": true
 };
+
+exports.globals = { "testVar": 'testVar' }
