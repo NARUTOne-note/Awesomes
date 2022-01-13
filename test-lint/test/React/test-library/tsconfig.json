@@ -23,7 +23,7 @@
     "moduleResolution": "node",
     "resolveJsonModule": true, // 解析.JSON模块
     "isolatedModules": true, // 将每个文件作为单独的模块
-    "jsx": "react-jsx"
+    "jsx": "react"
   },
   "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/index.ts"],
   "exclude": [

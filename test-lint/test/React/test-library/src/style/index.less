@@ -1,1 +1,17 @@
 @import './variables.less';
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
+.clear-float {
+  &::after {
+    display: table;
+    clear: both;
+    content: '';
+  }
+}

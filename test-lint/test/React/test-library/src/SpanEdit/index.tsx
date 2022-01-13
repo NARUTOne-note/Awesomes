@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Input } from 'antd';
-import CheckOutlined from '@ant-design/icons/CheckOutlined';
+import { CheckOutlined } from '@ant-design/icons';
 import './style/index.less';
 
 export interface SpanEditProps {

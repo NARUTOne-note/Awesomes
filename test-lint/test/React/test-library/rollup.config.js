@@ -19,8 +19,16 @@ export default {
         'react-dom': 'ReactDom',
       },
     },
+    {
+      format: 'es',
+      file: 'dist/demo-es.js',
+    },
+    {
+      format: 'cjs',
+      file: 'dist/demo-cjs.js',
+    }
   ],
-  external: ['react', 'react-dom', 'antd', '@ant-design/icons'],
+  external: ['react', 'react-dom', 'antd', '@ant-design/icons', 'classnames'],
   plugins: [
     typescript({ declaration: false }),
     resolve(),
@@ -34,6 +42,7 @@ export default {
       sourceMap: false,
       extensions: ['.less', '.css'],
       use: [['less', { javascriptEnabled: true }]],
+      extract: 'demo.css'
     }),
   ],
 };
