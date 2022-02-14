@@ -16,3 +16,7 @@
   - 模拟用户的交互方式（fireEvent）
   - 也支持除了 React 以外的其他 UI 框架
   
+## 参考
+
+- [testing-library/react 进行单元测试](https://segmentfault.com/a/1190000022054307)
+- [React Testing Library使用总结](https://juejin.cn/post/6907052045262389255)
