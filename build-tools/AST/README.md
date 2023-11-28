@@ -4,6 +4,7 @@
 
 - [参考1](https://juejin.im/post/5d9ed72b6fb9a04e3043d36e)
 - [参考2](https://juejin.im/post/5d50d1d9f265da03aa25607b?utm_source=gold_browser_extension)
+- [文档参考](https://evilrecluse.top/Babel-traverse-api-doc/#/)
 
 - [分词](https://esprima.org/demo/parse.html)
 - [AST](https://astexplorer.net/)
