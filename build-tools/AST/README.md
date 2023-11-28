@@ -26,6 +26,13 @@ Javascript 代码中的语法单元主要包括以下这么几种：ß
 - 注释：行注释或块注释都是一个不可拆分的最小语法单元
 - 其他：大括号、小括号、分号、冒号等
 
+AST 的公共属性
+
+- type： AST 节点的类型
+- start、end、loc：start 和 end 代表该节点在源码中的开始和结束下标。而 loc 属性是一个对象，有 line 和 column 属性分别记录开始和结束的行列号。
+- leadingComments、innerComments、trailingComments： 表示开始的注释、中间的注释、结尾的注释，每个 AST 节点中都可能存在注释，而且可能在开始、中间、结束这三种位置，想拿到某个 AST 的注释就通过这三个属性。
+- extra:：记录一些额外的信息，用于处理一些特殊情况。比如 StringLiteral 的 value 只是值的修改，而修改 extra.raw 则可以连同单双引号一起修改。
+
 ![AST type](./ast-type.png)
 
 ```js
