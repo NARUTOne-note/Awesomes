@@ -4,6 +4,7 @@
 
 - [参考1](https://juejin.im/post/5d9ed72b6fb9a04e3043d36e)
 - [参考2](https://juejin.im/post/5d50d1d9f265da03aa25607b?utm_source=gold_browser_extension)
+- [参考3](https://juejin.cn/post/7113800415057018894)
 - [文档参考](https://evilrecluse.top/Babel-traverse-api-doc/#/)
 
 - [分词](https://esprima.org/demo/parse.html)
@@ -90,3 +91,90 @@ var a = 1;
 - @babel/traverse：用于遍历 AST 树，获取当中的节点内容；
 - @babel/generator：把 AST 节点转化成对应的 JS 代码；
 - @babel/types：新建 AST 节点。
+
+## @babel/parser
+
+- options文档 [https://www.babeljs.cn/docs/babel-parser#options](https://www.babeljs.cn/docs/babel-parser#options)
+- 插件文档 [https://www.babeljs.cn/docs/babel-parser#plugins](https://www.babeljs.cn/docs/babel-parser#plugins)
+
+```js
+import babelParser from "@babel/parser";
+
+const source = `
+  let a = 1;
+`;
+
+babelParser.parse(source, {
+  sourceType: "module"
+});
+```
+
+## @bairong/traverse
+
+```js
+import babelParser from "@babel/parser";
+import babelTraverse from "@babel/traverse";
+
+const source = `
+  let a = 1;
+`;
+
+const ast = babelParser.parse(source, {
+  sourceType: "module"
+});
+
+babelTraverse(ast, {
+  enter(path) {
+    if (path.isVariableDeclaration()) {
+      console.log(path.node.declarations[0].id.name);
+    }
+  }
+})
+
+// 第一种写法
+babelTraverse(ast, {
+  // 递归子孙节点之前执行
+  enter(path) {
+  },
+  // 递归子孙节点之后执行
+  exit(path) {
+  }
+})
+
+// 第二种写法
+babelTraverse(ast, {
+  FunctionDirective(path) {
+    // 递归子孙节点之前执行
+    enter(path) {
+    },
+    // 递归子孙节点之后执行
+    exit(path) {
+    }
+  }
+})
+
+// 第三种写法
+babelTraverse(ast, {
+  'FunctionDeclaration|VariableDeclaration'(path) {
+    // 递归子孙节点之前执行
+    enter(path) {
+    },
+    // 递归子孙节点之后执行
+    exit(path) {
+    }
+  }
+})
+```
+
+```ts
+path {
+    node // 当前 AST 节点
+    parent // 父 AST 节点
+    parentPath // 父 AST 节点的 path
+    scope // 作用域 path.scope.parent.bindings.xxx，获取父作用域变量
+    hub // 可以通过 path.hub.file 拿到最外层 File 对象， path.hub.getScope 拿到最外层作用域，path.hub.getCode 拿到源码字符串
+    container // 当前 AST 节点所在的父节点属性的属性值
+    key // 当前 AST 节点所在父节点属性的属性名或所在数组的下标
+    listKey // 当前 AST 节点所在父节点属性的属性值为数组时 listkey 为该属性名，否则为 undefined
+}
+```
