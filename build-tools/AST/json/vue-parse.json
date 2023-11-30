@@ -1,0 +1,516 @@
+{
+  "descriptor": {
+    "filename": "anonymous.vue",
+    "source": "<template>\n  <div>\n    <!-- <p class=\"comment-info\">页面注释</p> -->\n  \t<p class=\"message-info\">此页面不存在</p>\n    <p class=\"message-text\">请检查您输入的网址是否正确</p>\n    <p>{{ greeting }} World!</p>\n  </div>\n</template>\n\n<script>\nexport default {\n  data () {\n    return {\n      greeting: \"Hello\"\n    };\n  },\n  mounted () {\n    // 注释\n    this.greeting = \"Goodbye\";\n  }\n};\n</script>\n\n<style scoped>\np {\n  font-size: 2em;\n  text-align: center;\n}\n</style>\n",
+    "template": {
+      "type": "template",
+      "content": "\n  <div>\n    <!-- <p class=\"comment-info\">页面注释</p> -->\n  \t<p class=\"message-info\">此页面不存在</p>\n    <p class=\"message-text\">请检查您输入的网址是否正确</p>\n    <p>{{ greeting }} World!</p>\n  </div>\n",
+      "loc": {
+        "source": "\n  <div>\n    <!-- <p class=\"comment-info\">页面注释</p> -->\n  \t<p class=\"message-info\">此页面不存在</p>\n    <p class=\"message-text\">请检查您输入的网址是否正确</p>\n    <p>{{ greeting }} World!</p>\n  </div>\n",
+        "start": {
+          "column": 11,
+          "line": 1,
+          "offset": 10
+        },
+        "end": {
+          "column": 1,
+          "line": 8,
+          "offset": 191
+        }
+      },
+      "attrs": {},
+      "ast": {
+        "type": 1,
+        "ns": 0,
+        "tag": "template",
+        "tagType": 0,
+        "props": [],
+        "isSelfClosing": false,
+        "children": [
+          {
+            "type": 2,
+            "content": "  ",
+            "loc": {
+              "start": {
+                "column": 11,
+                "line": 1,
+                "offset": 10
+              },
+              "end": {
+                "column": 3,
+                "line": 2,
+                "offset": 13
+              },
+              "source": "\n  "
+            }
+          },
+          {
+            "type": 1,
+            "ns": 0,
+            "tag": "div",
+            "tagType": 0,
+            "props": [],
+            "isSelfClosing": false,
+            "children": [
+              {
+                "type": 2,
+                "content": "    ",
+                "loc": {
+                  "start": {
+                    "column": 8,
+                    "line": 2,
+                    "offset": 18
+                  },
+                  "end": {
+                    "column": 5,
+                    "line": 3,
+                    "offset": 23
+                  },
+                  "source": "\n    "
+                }
+              },
+              {
+                "type": 3,
+                "content": " <p class=\"comment-info\">页面注释</p> ",
+                "loc": {
+                  "start": {
+                    "column": 5,
+                    "line": 3,
+                    "offset": 23
+                  },
+                  "end": {
+                    "column": 46,
+                    "line": 3,
+                    "offset": 64
+                  },
+                  "source": "<!-- <p class=\"comment-info\">页面注释</p> -->"
+                }
+              },
+              {
+                "type": 2,
+                "content": "\n  \t",
+                "loc": {
+                  "start": {
+                    "column": 46,
+                    "line": 3,
+                    "offset": 64
+                  },
+                  "end": {
+                    "column": 4,
+                    "line": 4,
+                    "offset": 68
+                  },
+                  "source": "\n  \t"
+                }
+              },
+              {
+                "type": 1,
+                "ns": 0,
+                "tag": "p",
+                "tagType": 0,
+                "props": [
+                  {
+                    "type": 6,
+                    "name": "class",
+                    "value": {
+                      "type": 2,
+                      "content": "message-info",
+                      "loc": {
+                        "start": {
+                          "column": 13,
+                          "line": 4,
+                          "offset": 77
+                        },
+                        "end": {
+                          "column": 27,
+                          "line": 4,
+                          "offset": 91
+                        },
+                        "source": "\"message-info\""
+                      }
+                    },
+                    "loc": {
+                      "start": {
+                        "column": 7,
+                        "line": 4,
+                        "offset": 71
+                      },
+                      "end": {
+                        "column": 27,
+                        "line": 4,
+                        "offset": 91
+                      },
+                      "source": "class=\"message-info\""
+                    }
+                  }
+                ],
+                "isSelfClosing": false,
+                "children": [
+                  {
+                    "type": 2,
+                    "content": "此页面不存在",
+                    "loc": {
+                      "start": {
+                        "column": 28,
+                        "line": 4,
+                        "offset": 92
+                      },
+                      "end": {
+                        "column": 34,
+                        "line": 4,
+                        "offset": 98
+                      },
+                      "source": "此页面不存在"
+                    }
+                  }
+                ],
+                "loc": {
+                  "start": {
+                    "column": 4,
+                    "line": 4,
+                    "offset": 68
+                  },
+                  "end": {
+                    "column": 38,
+                    "line": 4,
+                    "offset": 102
+                  },
+                  "source": "<p class=\"message-info\">此页面不存在</p>"
+                }
+              },
+              {
+                "type": 2,
+                "content": "\n    ",
+                "loc": {
+                  "start": {
+                    "column": 38,
+                    "line": 4,
+                    "offset": 102
+                  },
+                  "end": {
+                    "column": 5,
+                    "line": 5,
+                    "offset": 107
+                  },
+                  "source": "\n    "
+                }
+              },
+              {
+                "type": 1,
+                "ns": 0,
+                "tag": "p",
+                "tagType": 0,
+                "props": [
+                  {
+                    "type": 6,
+                    "name": "class",
+                    "value": {
+                      "type": 2,
+                      "content": "message-text",
+                      "loc": {
+                        "start": {
+                          "column": 14,
+                          "line": 5,
+                          "offset": 116
+                        },
+                        "end": {
+                          "column": 28,
+                          "line": 5,
+                          "offset": 130
+                        },
+                        "source": "\"message-text\""
+                      }
+                    },
+                    "loc": {
+                      "start": {
+                        "column": 8,
+                        "line": 5,
+                        "offset": 110
+                      },
+                      "end": {
+                        "column": 28,
+                        "line": 5,
+                        "offset": 130
+                      },
+                      "source": "class=\"message-text\""
+                    }
+                  }
+                ],
+                "isSelfClosing": false,
+                "children": [
+                  {
+                    "type": 2,
+                    "content": "请检查您输入的网址是否正确",
+                    "loc": {
+                      "start": {
+                        "column": 29,
+                        "line": 5,
+                        "offset": 131
+                      },
+                      "end": {
+                        "column": 42,
+                        "line": 5,
+                        "offset": 144
+                      },
+                      "source": "请检查您输入的网址是否正确"
+                    }
+                  }
+                ],
+                "loc": {
+                  "start": {
+                    "column": 5,
+                    "line": 5,
+                    "offset": 107
+                  },
+                  "end": {
+                    "column": 46,
+                    "line": 5,
+                    "offset": 148
+                  },
+                  "source": "<p class=\"message-text\">请检查您输入的网址是否正确</p>"
+                }
+              },
+              {
+                "type": 2,
+                "content": "\n    ",
+                "loc": {
+                  "start": {
+                    "column": 46,
+                    "line": 5,
+                    "offset": 148
+                  },
+                  "end": {
+                    "column": 5,
+                    "line": 6,
+                    "offset": 153
+                  },
+                  "source": "\n    "
+                }
+              },
+              {
+                "type": 1,
+                "ns": 0,
+                "tag": "p",
+                "tagType": 0,
+                "props": [],
+                "isSelfClosing": false,
+                "children": [
+                  {
+                    "type": 5,
+                    "content": {
+                      "type": 4,
+                      "isStatic": false,
+                      "constType": 0,
+                      "content": "greeting",
+                      "loc": {
+                        "start": {
+                          "column": 11,
+                          "line": 6,
+                          "offset": 159
+                        },
+                        "end": {
+                          "column": 19,
+                          "line": 6,
+                          "offset": 167
+                        },
+                        "source": "greeting"
+                      }
+                    },
+                    "loc": {
+                      "start": {
+                        "column": 8,
+                        "line": 6,
+                        "offset": 156
+                      },
+                      "end": {
+                        "column": 22,
+                        "line": 6,
+                        "offset": 170
+                      },
+                      "source": "{{ greeting }}"
+                    }
+                  },
+                  {
+                    "type": 2,
+                    "content": " World!",
+                    "loc": {
+                      "start": {
+                        "column": 22,
+                        "line": 6,
+                        "offset": 170
+                      },
+                      "end": {
+                        "column": 29,
+                        "line": 6,
+                        "offset": 177
+                      },
+                      "source": " World!"
+                    }
+                  }
+                ],
+                "loc": {
+                  "start": {
+                    "column": 5,
+                    "line": 6,
+                    "offset": 153
+                  },
+                  "end": {
+                    "column": 33,
+                    "line": 6,
+                    "offset": 181
+                  },
+                  "source": "<p>{{ greeting }} World!</p>"
+                }
+              },
+              {
+                "type": 2,
+                "content": "\n  ",
+                "loc": {
+                  "start": {
+                    "column": 33,
+                    "line": 6,
+                    "offset": 181
+                  },
+                  "end": {
+                    "column": 3,
+                    "line": 7,
+                    "offset": 184
+                  },
+                  "source": "\n  "
+                }
+              }
+            ],
+            "loc": {
+              "start": {
+                "column": 3,
+                "line": 2,
+                "offset": 13
+              },
+              "end": {
+                "column": 9,
+                "line": 7,
+                "offset": 190
+              },
+              "source": "<div>\n    <!-- <p class=\"comment-info\">页面注释</p> -->\n  \t<p class=\"message-info\">此页面不存在</p>\n    <p class=\"message-text\">请检查您输入的网址是否正确</p>\n    <p>{{ greeting }} World!</p>\n  </div>"
+            }
+          },
+          {
+            "type": 2,
+            "content": "\n",
+            "loc": {
+              "start": {
+                "column": 9,
+                "line": 7,
+                "offset": 190
+              },
+              "end": {
+                "column": 1,
+                "line": 8,
+                "offset": 191
+              },
+              "source": "\n"
+            }
+          }
+        ],
+        "loc": {
+          "start": {
+            "column": 1,
+            "line": 1,
+            "offset": 0
+          },
+          "end": {
+            "column": 12,
+            "line": 8,
+            "offset": 202
+          },
+          "source": "<template>\n  <div>\n    <!-- <p class=\"comment-info\">页面注释</p> -->\n  \t<p class=\"message-info\">此页面不存在</p>\n    <p class=\"message-text\">请检查您输入的网址是否正确</p>\n    <p>{{ greeting }} World!</p>\n  </div>\n</template>"
+        }
+      },
+      "map": {
+        "version": 3,
+        "sources": [
+          "anonymous.vue"
+        ],
+        "names": [],
+        "mappings": ";EACE,CAAC,CAAC,CAAC,CAAC;IACF,CAAC,CAAC,CAAC,EAAE,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC;GACzC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;IAChC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;IACxC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;EAC7B,CAAC,CAAC,CAAC,CAAC,CAAC",
+        "file": "anonymous.vue",
+        "sourceRoot": "",
+        "sourcesContent": [
+          "<template>\n  <div>\n    <!-- <p class=\"comment-info\">页面注释</p> -->\n  \t<p class=\"message-info\">此页面不存在</p>\n    <p class=\"message-text\">请检查您输入的网址是否正确</p>\n    <p>{{ greeting }} World!</p>\n  </div>\n</template>\n\n<script>\nexport default {\n  data () {\n    return {\n      greeting: \"Hello\"\n    };\n  },\n  mounted () {\n    // 注释\n    this.greeting = \"Goodbye\";\n  }\n};\n</script>\n\n<style scoped>\np {\n  font-size: 2em;\n  text-align: center;\n}\n</style>\n"
+        ]
+      }
+    },
+    "script": {
+      "type": "script",
+      "content": "\nexport default {\n  data () {\n    return {\n      greeting: \"Hello\"\n    };\n  },\n  mounted () {\n    // 注释\n    this.greeting = \"Goodbye\";\n  }\n};\n",
+      "loc": {
+        "source": "\nexport default {\n  data () {\n    return {\n      greeting: \"Hello\"\n    };\n  },\n  mounted () {\n    // 注释\n    this.greeting = \"Goodbye\";\n  }\n};\n",
+        "start": {
+          "column": 9,
+          "line": 10,
+          "offset": 212
+        },
+        "end": {
+          "column": 1,
+          "line": 22,
+          "offset": 354
+        }
+      },
+      "attrs": {},
+      "map": {
+        "version": 3,
+        "sources": [
+          "anonymous.vue"
+        ],
+        "names": [],
+        "mappings": ";AAUA,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE;EACb,CAAC,CAAC,CAAC,EAAE,CAAC,EAAE;IACN,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE;MACL,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;IAClB,CAAC;EACH,CAAC;EACD,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,EAAE;IACT,CAAC,EAAE,CAAC;IACJ,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;EAC3B;AACF,CAAC",
+        "file": "anonymous.vue",
+        "sourceRoot": "",
+        "sourcesContent": [
+          "<template>\n  <div>\n    <!-- <p class=\"comment-info\">页面注释</p> -->\n  \t<p class=\"message-info\">此页面不存在</p>\n    <p class=\"message-text\">请检查您输入的网址是否正确</p>\n    <p>{{ greeting }} World!</p>\n  </div>\n</template>\n\n<script>\nexport default {\n  data () {\n    return {\n      greeting: \"Hello\"\n    };\n  },\n  mounted () {\n    // 注释\n    this.greeting = \"Goodbye\";\n  }\n};\n</script>\n\n<style scoped>\np {\n  font-size: 2em;\n  text-align: center;\n}\n</style>\n"
+        ]
+      }
+    },
+    "scriptSetup": null,
+    "styles": [
+      {
+        "type": "style",
+        "content": "\np {\n  font-size: 2em;\n  text-align: center;\n}\n",
+        "loc": {
+          "source": "\np {\n  font-size: 2em;\n  text-align: center;\n}\n",
+          "start": {
+            "column": 15,
+            "line": 24,
+            "offset": 379
+          },
+          "end": {
+            "column": 1,
+            "line": 29,
+            "offset": 426
+          }
+        },
+        "attrs": {
+          "scoped": true
+        },
+        "scoped": true,
+        "map": {
+          "version": 3,
+          "sources": [
+            "anonymous.vue"
+          ],
+          "names": [],
+          "mappings": ";AAwBA,EAAE;EACA,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC;EACd,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACpB",
+          "file": "anonymous.vue",
+          "sourceRoot": "",
+          "sourcesContent": [
+            "<template>\n  <div>\n    <!-- <p class=\"comment-info\">页面注释</p> -->\n  \t<p class=\"message-info\">此页面不存在</p>\n    <p class=\"message-text\">请检查您输入的网址是否正确</p>\n    <p>{{ greeting }} World!</p>\n  </div>\n</template>\n\n<script>\nexport default {\n  data () {\n    return {\n      greeting: \"Hello\"\n    };\n  },\n  mounted () {\n    // 注释\n    this.greeting = \"Goodbye\";\n  }\n};\n</script>\n\n<style scoped>\np {\n  font-size: 2em;\n  text-align: center;\n}\n</style>\n"
+          ]
+        }
+      }
+    ],
+    "customBlocks": [],
+    "cssVars": [],
+    "slotted": false
+  },
+  "errors": []
+}

@@ -3,12 +3,13 @@
   "version": "1.0.0",
   "description": "源代码语法结构的一种抽象表示。它以树状的形式表现编程语言的语法结构，树上的每个节点都表示源代码中的一种结构。",
   "main": "index.js",
-  
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "demo-es6": "node ast-code/parseToModules",
     "change-env": "node ast-code/changeEnv.js",
-    "comment": "node ast-code/comment.js"
+    "comment": "node ast-code/comment.js",
+    "lodash": "node ast-code/lodash.js",
+    "vue": "node ast-code/vue.js"
   },
   "keywords": [],
   "author": "",
@@ -19,6 +20,8 @@
     "@babel/parser": "^7.23.5",
     "@babel/traverse": "^7.23.5",
     "@babel/types": "^7.23.5",
-    "jscodeshift": "^0.15.1"
+    "@vue/compiler-sfc": "^3.3.9",
+    "jscodeshift": "^0.15.1",
+    "lodash": "^4.17.21"
   }
 }
