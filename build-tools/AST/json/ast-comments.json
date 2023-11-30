@@ -1,0 +1,32 @@
+[
+  {
+    "comment": "*\n * 顶部注释\n * 注释描述\n ",
+    "start": 0,
+    "end": 23
+  },
+  {
+    "comment": " 注释0",
+    "start": 44,
+    "end": 50
+  },
+  {
+    "comment": " 注释1",
+    "start": 267,
+    "end": 273
+  },
+  {
+    "comment": " 注释2",
+    "start": 300,
+    "end": 306
+  },
+  {
+    "comment": " 注释3",
+    "start": 370,
+    "end": 376
+  },
+  {
+    "comment": " @i18n-ignore",
+    "start": 380,
+    "end": 395
+  }
+]

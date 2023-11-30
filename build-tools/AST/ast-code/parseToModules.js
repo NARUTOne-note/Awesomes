@@ -43,6 +43,3 @@ traverse(ast, {
     }
   }
 })
-
-// 输出新的文件
-createFile('es6code', generator(ast).code)

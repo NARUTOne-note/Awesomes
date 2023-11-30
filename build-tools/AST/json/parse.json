@@ -1,0 +1,1071 @@
+{
+  "type": "File",
+  "start": 0,
+  "end": 412,
+  "loc": {
+    "start": {
+      "line": 1,
+      "column": 0,
+      "index": 0
+    },
+    "end": {
+      "line": 23,
+      "column": 16,
+      "index": 412
+    }
+  },
+  "errors": [],
+  "program": {
+    "type": "Program",
+    "start": 0,
+    "end": 412,
+    "loc": {
+      "start": {
+        "line": 1,
+        "column": 0,
+        "index": 0
+      },
+      "end": {
+        "line": 23,
+        "column": 16,
+        "index": 412
+      }
+    },
+    "sourceType": "module",
+    "interpreter": null,
+    "body": [
+      {
+        "type": "ImportDeclaration",
+        "start": 24,
+        "end": 42,
+        "loc": {
+          "start": {
+            "line": 5,
+            "column": 0,
+            "index": 24
+          },
+          "end": {
+            "line": 5,
+            "column": 18,
+            "index": 42
+          }
+        },
+        "specifiers": [
+          {
+            "type": "ImportDefaultSpecifier",
+            "start": 31,
+            "end": 32,
+            "loc": {
+              "start": {
+                "line": 5,
+                "column": 7,
+                "index": 31
+              },
+              "end": {
+                "line": 5,
+                "column": 8,
+                "index": 32
+              }
+            },
+            "local": {
+              "type": "Identifier",
+              "start": 31,
+              "end": 32,
+              "loc": {
+                "start": {
+                  "line": 5,
+                  "column": 7,
+                  "index": 31
+                },
+                "end": {
+                  "line": 5,
+                  "column": 8,
+                  "index": 32
+                },
+                "identifierName": "a"
+              },
+              "name": "a"
+            }
+          }
+        ],
+        "source": {
+          "type": "StringLiteral",
+          "start": 38,
+          "end": 41,
+          "loc": {
+            "start": {
+              "line": 5,
+              "column": 14,
+              "index": 38
+            },
+            "end": {
+              "line": 5,
+              "column": 17,
+              "index": 41
+            }
+          },
+          "extra": {
+            "rawValue": "a",
+            "raw": "\"a\""
+          },
+          "value": "a"
+        },
+        "trailingComments": [
+          {
+            "type": "CommentLine",
+            "value": " 注释0",
+            "start": 44,
+            "end": 50,
+            "loc": {
+              "start": {
+                "line": 7,
+                "column": 0,
+                "index": 44
+              },
+              "end": {
+                "line": 7,
+                "column": 6,
+                "index": 50
+              }
+            }
+          }
+        ],
+        "leadingComments": [
+          {
+            "type": "CommentBlock",
+            "value": "*\n * 顶部注释\n * 注释描述\n ",
+            "start": 0,
+            "end": 23,
+            "loc": {
+              "start": {
+                "line": 1,
+                "column": 0,
+                "index": 0
+              },
+              "end": {
+                "line": 4,
+                "column": 3,
+                "index": 23
+              }
+            }
+          }
+        ]
+      },
+      {
+        "type": "VariableDeclaration",
+        "start": 51,
+        "end": 266,
+        "loc": {
+          "start": {
+            "line": 8,
+            "column": 0,
+            "index": 51
+          },
+          "end": {
+            "line": 15,
+            "column": 2,
+            "index": 266
+          }
+        },
+        "declarations": [
+          {
+            "type": "VariableDeclarator",
+            "start": 55,
+            "end": 265,
+            "loc": {
+              "start": {
+                "line": 8,
+                "column": 4,
+                "index": 55
+              },
+              "end": {
+                "line": 15,
+                "column": 1,
+                "index": 265
+              }
+            },
+            "id": {
+              "type": "Identifier",
+              "start": 55,
+              "end": 59,
+              "loc": {
+                "start": {
+                  "line": 8,
+                  "column": 4,
+                  "index": 55
+                },
+                "end": {
+                  "line": 8,
+                  "column": 8,
+                  "index": 59
+                },
+                "identifierName": "tips"
+              },
+              "name": "tips"
+            },
+            "init": {
+              "type": "ArrayExpression",
+              "start": 62,
+              "end": 265,
+              "loc": {
+                "start": {
+                  "line": 8,
+                  "column": 11,
+                  "index": 62
+                },
+                "end": {
+                  "line": 15,
+                  "column": 1,
+                  "index": 265
+                }
+              },
+              "elements": [
+                {
+                  "type": "StringLiteral",
+                  "start": 66,
+                  "end": 113,
+                  "loc": {
+                    "start": {
+                      "line": 9,
+                      "column": 2,
+                      "index": 66
+                    },
+                    "end": {
+                      "line": 9,
+                      "column": 49,
+                      "index": 113
+                    }
+                  },
+                  "extra": {
+                    "rawValue": "Click on any AST node with a '+' to expand it",
+                    "raw": "\"Click on any AST node with a '+' to expand it\""
+                  },
+                  "value": "Click on any AST node with a '+' to expand it"
+                },
+                {
+                  "type": "StringLiteral",
+                  "start": 118,
+                  "end": 202,
+                  "loc": {
+                    "start": {
+                      "line": 11,
+                      "column": 2,
+                      "index": 118
+                    },
+                    "end": {
+                      "line": 12,
+                      "column": 45,
+                      "index": 202
+                    }
+                  },
+                  "extra": {
+                    "rawValue": "Hovering over a node highlights the    corresponding location in the source code",
+                    "raw": "\"Hovering over a node highlights the \\\n   corresponding location in the source code\""
+                  },
+                  "value": "Hovering over a node highlights the    corresponding location in the source code"
+                },
+                {
+                  "type": "StringLiteral",
+                  "start": 207,
+                  "end": 263,
+                  "loc": {
+                    "start": {
+                      "line": 14,
+                      "column": 2,
+                      "index": 207
+                    },
+                    "end": {
+                      "line": 14,
+                      "column": 58,
+                      "index": 263
+                    }
+                  },
+                  "extra": {
+                    "rawValue": "Shift click on an AST node to expand the whole subtree",
+                    "raw": "\"Shift click on an AST node to expand the whole subtree\""
+                  },
+                  "value": "Shift click on an AST node to expand the whole subtree"
+                }
+              ]
+            }
+          }
+        ],
+        "kind": "let",
+        "trailingComments": [
+          {
+            "type": "CommentLine",
+            "value": " 注释1",
+            "start": 267,
+            "end": 273,
+            "loc": {
+              "start": {
+                "line": 16,
+                "column": 0,
+                "index": 267
+              },
+              "end": {
+                "line": 16,
+                "column": 6,
+                "index": 273
+              }
+            }
+          }
+        ],
+        "leadingComments": [
+          {
+            "type": "CommentLine",
+            "value": " 注释0",
+            "start": 44,
+            "end": 50,
+            "loc": {
+              "start": {
+                "line": 7,
+                "column": 0,
+                "index": 44
+              },
+              "end": {
+                "line": 7,
+                "column": 6,
+                "index": 50
+              }
+            }
+          }
+        ]
+      },
+      {
+        "type": "FunctionDeclaration",
+        "start": 274,
+        "end": 378,
+        "loc": {
+          "start": {
+            "line": 17,
+            "column": 0,
+            "index": 274
+          },
+          "end": {
+            "line": 20,
+            "column": 1,
+            "index": 378
+          }
+        },
+        "id": {
+          "type": "Identifier",
+          "start": 283,
+          "end": 292,
+          "loc": {
+            "start": {
+              "line": 17,
+              "column": 9,
+              "index": 283
+            },
+            "end": {
+              "line": 17,
+              "column": 18,
+              "index": 292
+            },
+            "identifierName": "printTips"
+          },
+          "name": "printTips"
+        },
+        "generator": false,
+        "async": false,
+        "params": [
+          {
+            "type": "Identifier",
+            "start": 293,
+            "end": 294,
+            "loc": {
+              "start": {
+                "line": 17,
+                "column": 19,
+                "index": 293
+              },
+              "end": {
+                "line": 17,
+                "column": 20,
+                "index": 294
+              },
+              "identifierName": "s"
+            },
+            "name": "s"
+          }
+        ],
+        "body": {
+          "type": "BlockStatement",
+          "start": 296,
+          "end": 378,
+          "loc": {
+            "start": {
+              "line": 17,
+              "column": 22,
+              "index": 296
+            },
+            "end": {
+              "line": 20,
+              "column": 1,
+              "index": 378
+            }
+          },
+          "body": [
+            {
+              "type": "ExpressionStatement",
+              "start": 309,
+              "end": 369,
+              "loc": {
+                "start": {
+                  "line": 19,
+                  "column": 2,
+                  "index": 309
+                },
+                "end": {
+                  "line": 19,
+                  "column": 62,
+                  "index": 369
+                }
+              },
+              "expression": {
+                "type": "CallExpression",
+                "start": 309,
+                "end": 368,
+                "loc": {
+                  "start": {
+                    "line": 19,
+                    "column": 2,
+                    "index": 309
+                  },
+                  "end": {
+                    "line": 19,
+                    "column": 61,
+                    "index": 368
+                  }
+                },
+                "callee": {
+                  "type": "MemberExpression",
+                  "start": 309,
+                  "end": 321,
+                  "loc": {
+                    "start": {
+                      "line": 19,
+                      "column": 2,
+                      "index": 309
+                    },
+                    "end": {
+                      "line": 19,
+                      "column": 14,
+                      "index": 321
+                    }
+                  },
+                  "object": {
+                    "type": "Identifier",
+                    "start": 309,
+                    "end": 313,
+                    "loc": {
+                      "start": {
+                        "line": 19,
+                        "column": 2,
+                        "index": 309
+                      },
+                      "end": {
+                        "line": 19,
+                        "column": 6,
+                        "index": 313
+                      },
+                      "identifierName": "tips"
+                    },
+                    "name": "tips"
+                  },
+                  "computed": false,
+                  "property": {
+                    "type": "Identifier",
+                    "start": 314,
+                    "end": 321,
+                    "loc": {
+                      "start": {
+                        "line": 19,
+                        "column": 7,
+                        "index": 314
+                      },
+                      "end": {
+                        "line": 19,
+                        "column": 14,
+                        "index": 321
+                      },
+                      "identifierName": "forEach"
+                    },
+                    "name": "forEach"
+                  }
+                },
+                "arguments": [
+                  {
+                    "type": "ArrowFunctionExpression",
+                    "start": 322,
+                    "end": 367,
+                    "loc": {
+                      "start": {
+                        "line": 19,
+                        "column": 15,
+                        "index": 322
+                      },
+                      "end": {
+                        "line": 19,
+                        "column": 60,
+                        "index": 367
+                      }
+                    },
+                    "id": null,
+                    "generator": false,
+                    "async": false,
+                    "params": [
+                      {
+                        "type": "Identifier",
+                        "start": 323,
+                        "end": 326,
+                        "loc": {
+                          "start": {
+                            "line": 19,
+                            "column": 16,
+                            "index": 323
+                          },
+                          "end": {
+                            "line": 19,
+                            "column": 19,
+                            "index": 326
+                          },
+                          "identifierName": "tip"
+                        },
+                        "name": "tip"
+                      },
+                      {
+                        "type": "Identifier",
+                        "start": 328,
+                        "end": 329,
+                        "loc": {
+                          "start": {
+                            "line": 19,
+                            "column": 21,
+                            "index": 328
+                          },
+                          "end": {
+                            "line": 19,
+                            "column": 22,
+                            "index": 329
+                          },
+                          "identifierName": "i"
+                        },
+                        "name": "i"
+                      }
+                    ],
+                    "body": {
+                      "type": "CallExpression",
+                      "start": 334,
+                      "end": 367,
+                      "loc": {
+                        "start": {
+                          "line": 19,
+                          "column": 27,
+                          "index": 334
+                        },
+                        "end": {
+                          "line": 19,
+                          "column": 60,
+                          "index": 367
+                        }
+                      },
+                      "callee": {
+                        "type": "MemberExpression",
+                        "start": 334,
+                        "end": 345,
+                        "loc": {
+                          "start": {
+                            "line": 19,
+                            "column": 27,
+                            "index": 334
+                          },
+                          "end": {
+                            "line": 19,
+                            "column": 38,
+                            "index": 345
+                          }
+                        },
+                        "object": {
+                          "type": "Identifier",
+                          "start": 334,
+                          "end": 341,
+                          "loc": {
+                            "start": {
+                              "line": 19,
+                              "column": 27,
+                              "index": 334
+                            },
+                            "end": {
+                              "line": 19,
+                              "column": 34,
+                              "index": 341
+                            },
+                            "identifierName": "console"
+                          },
+                          "name": "console"
+                        },
+                        "computed": false,
+                        "property": {
+                          "type": "Identifier",
+                          "start": 342,
+                          "end": 345,
+                          "loc": {
+                            "start": {
+                              "line": 19,
+                              "column": 35,
+                              "index": 342
+                            },
+                            "end": {
+                              "line": 19,
+                              "column": 38,
+                              "index": 345
+                            },
+                            "identifierName": "log"
+                          },
+                          "name": "log"
+                        }
+                      },
+                      "arguments": [
+                        {
+                          "type": "BinaryExpression",
+                          "start": 346,
+                          "end": 363,
+                          "loc": {
+                            "start": {
+                              "line": 19,
+                              "column": 39,
+                              "index": 346
+                            },
+                            "end": {
+                              "line": 19,
+                              "column": 56,
+                              "index": 363
+                            }
+                          },
+                          "left": {
+                            "type": "TemplateLiteral",
+                            "start": 346,
+                            "end": 357,
+                            "loc": {
+                              "start": {
+                                "line": 19,
+                                "column": 39,
+                                "index": 346
+                              },
+                              "end": {
+                                "line": 19,
+                                "column": 50,
+                                "index": 357
+                              }
+                            },
+                            "expressions": [
+                              {
+                                "type": "Identifier",
+                                "start": 353,
+                                "end": 354,
+                                "loc": {
+                                  "start": {
+                                    "line": 19,
+                                    "column": 46,
+                                    "index": 353
+                                  },
+                                  "end": {
+                                    "line": 19,
+                                    "column": 47,
+                                    "index": 354
+                                  },
+                                  "identifierName": "i"
+                                },
+                                "name": "i"
+                              }
+                            ],
+                            "quasis": [
+                              {
+                                "type": "TemplateElement",
+                                "start": 347,
+                                "end": 351,
+                                "loc": {
+                                  "start": {
+                                    "line": 19,
+                                    "column": 40,
+                                    "index": 347
+                                  },
+                                  "end": {
+                                    "line": 19,
+                                    "column": 44,
+                                    "index": 351
+                                  }
+                                },
+                                "value": {
+                                  "raw": "Tip ",
+                                  "cooked": "Tip "
+                                },
+                                "tail": false
+                              },
+                              {
+                                "type": "TemplateElement",
+                                "start": 355,
+                                "end": 356,
+                                "loc": {
+                                  "start": {
+                                    "line": 19,
+                                    "column": 48,
+                                    "index": 355
+                                  },
+                                  "end": {
+                                    "line": 19,
+                                    "column": 49,
+                                    "index": 356
+                                  }
+                                },
+                                "value": {
+                                  "raw": ":",
+                                  "cooked": ":"
+                                },
+                                "tail": true
+                              }
+                            ]
+                          },
+                          "operator": "+",
+                          "right": {
+                            "type": "Identifier",
+                            "start": 360,
+                            "end": 363,
+                            "loc": {
+                              "start": {
+                                "line": 19,
+                                "column": 53,
+                                "index": 360
+                              },
+                              "end": {
+                                "line": 19,
+                                "column": 56,
+                                "index": 363
+                              },
+                              "identifierName": "tip"
+                            },
+                            "name": "tip"
+                          }
+                        },
+                        {
+                          "type": "Identifier",
+                          "start": 365,
+                          "end": 366,
+                          "loc": {
+                            "start": {
+                              "line": 19,
+                              "column": 58,
+                              "index": 365
+                            },
+                            "end": {
+                              "line": 19,
+                              "column": 59,
+                              "index": 366
+                            },
+                            "identifierName": "s"
+                          },
+                          "name": "s"
+                        }
+                      ]
+                    }
+                  }
+                ]
+              },
+              "trailingComments": [
+                {
+                  "type": "CommentLine",
+                  "value": " 注释3",
+                  "start": 370,
+                  "end": 376,
+                  "loc": {
+                    "start": {
+                      "line": 19,
+                      "column": 63,
+                      "index": 370
+                    },
+                    "end": {
+                      "line": 19,
+                      "column": 69,
+                      "index": 376
+                    }
+                  }
+                }
+              ],
+              "leadingComments": [
+                {
+                  "type": "CommentLine",
+                  "value": " 注释2",
+                  "start": 300,
+                  "end": 306,
+                  "loc": {
+                    "start": {
+                      "line": 18,
+                      "column": 2,
+                      "index": 300
+                    },
+                    "end": {
+                      "line": 18,
+                      "column": 8,
+                      "index": 306
+                    }
+                  }
+                }
+              ]
+            }
+          ],
+          "directives": []
+        },
+        "trailingComments": [
+          {
+            "type": "CommentLine",
+            "value": " @i18n-ignore",
+            "start": 380,
+            "end": 395,
+            "loc": {
+              "start": {
+                "line": 22,
+                "column": 0,
+                "index": 380
+              },
+              "end": {
+                "line": 22,
+                "column": 15,
+                "index": 395
+              }
+            }
+          }
+        ],
+        "leadingComments": [
+          {
+            "type": "CommentLine",
+            "value": " 注释1",
+            "start": 267,
+            "end": 273,
+            "loc": {
+              "start": {
+                "line": 16,
+                "column": 0,
+                "index": 267
+              },
+              "end": {
+                "line": 16,
+                "column": 6,
+                "index": 273
+              }
+            }
+          }
+        ]
+      },
+      {
+        "type": "ExpressionStatement",
+        "start": 396,
+        "end": 412,
+        "loc": {
+          "start": {
+            "line": 23,
+            "column": 0,
+            "index": 396
+          },
+          "end": {
+            "line": 23,
+            "column": 16,
+            "index": 412
+          }
+        },
+        "expression": {
+          "type": "CallExpression",
+          "start": 396,
+          "end": 411,
+          "loc": {
+            "start": {
+              "line": 23,
+              "column": 0,
+              "index": 396
+            },
+            "end": {
+              "line": 23,
+              "column": 15,
+              "index": 411
+            }
+          },
+          "callee": {
+            "type": "Identifier",
+            "start": 396,
+            "end": 405,
+            "loc": {
+              "start": {
+                "line": 23,
+                "column": 0,
+                "index": 396
+              },
+              "end": {
+                "line": 23,
+                "column": 9,
+                "index": 405
+              },
+              "identifierName": "printTips"
+            },
+            "name": "printTips"
+          },
+          "arguments": [
+            {
+              "type": "StringLiteral",
+              "start": 406,
+              "end": 410,
+              "loc": {
+                "start": {
+                  "line": 23,
+                  "column": 10,
+                  "index": 406
+                },
+                "end": {
+                  "line": 23,
+                  "column": 14,
+                  "index": 410
+                }
+              },
+              "extra": {
+                "rawValue": "参数",
+                "raw": "\"参数\""
+              },
+              "value": "参数"
+            }
+          ]
+        },
+        "leadingComments": [
+          {
+            "type": "CommentLine",
+            "value": " @i18n-ignore",
+            "start": 380,
+            "end": 395,
+            "loc": {
+              "start": {
+                "line": 22,
+                "column": 0,
+                "index": 380
+              },
+              "end": {
+                "line": 22,
+                "column": 15,
+                "index": 395
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "directives": []
+  },
+  "comments": [
+    {
+      "type": "CommentBlock",
+      "value": "*\n * 顶部注释\n * 注释描述\n ",
+      "start": 0,
+      "end": 23,
+      "loc": {
+        "start": {
+          "line": 1,
+          "column": 0,
+          "index": 0
+        },
+        "end": {
+          "line": 4,
+          "column": 3,
+          "index": 23
+        }
+      }
+    },
+    {
+      "type": "CommentLine",
+      "value": " 注释0",
+      "start": 44,
+      "end": 50,
+      "loc": {
+        "start": {
+          "line": 7,
+          "column": 0,
+          "index": 44
+        },
+        "end": {
+          "line": 7,
+          "column": 6,
+          "index": 50
+        }
+      }
+    },
+    {
+      "type": "CommentLine",
+      "value": " 注释1",
+      "start": 267,
+      "end": 273,
+      "loc": {
+        "start": {
+          "line": 16,
+          "column": 0,
+          "index": 267
+        },
+        "end": {
+          "line": 16,
+          "column": 6,
+          "index": 273
+        }
+      }
+    },
+    {
+      "type": "CommentLine",
+      "value": " 注释2",
+      "start": 300,
+      "end": 306,
+      "loc": {
+        "start": {
+          "line": 18,
+          "column": 2,
+          "index": 300
+        },
+        "end": {
+          "line": 18,
+          "column": 8,
+          "index": 306
+        }
+      }
+    },
+    {
+      "type": "CommentLine",
+      "value": " 注释3",
+      "start": 370,
+      "end": 376,
+      "loc": {
+        "start": {
+          "line": 19,
+          "column": 63,
+          "index": 370
+        },
+        "end": {
+          "line": 19,
+          "column": 69,
+          "index": 376
+        }
+      }
+    },
+    {
+      "type": "CommentLine",
+      "value": " @i18n-ignore",
+      "start": 380,
+      "end": 395,
+      "loc": {
+        "start": {
+          "line": 22,
+          "column": 0,
+          "index": 380
+        },
+        "end": {
+          "line": 22,
+          "column": 15,
+          "index": 395
+        }
+      }
+    }
+  ]
+}
