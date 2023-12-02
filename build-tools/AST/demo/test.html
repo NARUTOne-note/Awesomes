@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div class="layui-header" style="display: none;">
+    <img class="logo" src="img/bairong_logo.png">
+    <div class="tab_title">设备反欺诈管理平台</div>
+    <ul class="layui-nav layui-layout-right">
+      <li class="layui-nav-item" id="usermsg" title="个人信息">
+        <a>
+          <img src="img/login.png" class="layui-nav-img">
+          <span id="username"></span>
+        </a>
+      </li>
+      <li class="layui-nav-item" id="exitLogin" title="退出">
+        <a>
+          <img src="img/exit.png" class="layui-nav-img">
+          退出
+        </a>
+      </li>
+    </ul>
+  </div>
+</body>
+<script type="text/javascript">
+  document.write("<scr"+"ipt src=\"layui/layui.min.js\"></sc"+"ript>")
+  document.write("<scr"+"ipt src=\"js/src/jquery-3.4.0.min.js\"></sc"+"ript>")
+  document.write("<scr"+"ipt src=\"js/src/vue.min.js\"></sc"+"ript>")
+  document.write("<scr"+"ipt src=\"js/src/elementui.min.js\"></sc"+"ript>")
+  document.write("<scr"+"ipt src=\"js/src/axios.min.js\"></sc"+"ript>")
+  document.write("<scr"+"ipt src=\"layui/css/modules/common.js\"></sc"+"ript>")
+  document.write("<scr"+"ipt src=\"layui/layui-xtree.min.js\"></sc"+"ript>")
+</script>
+<script>
+  function alert(e) {
+    //$("body").html("");   //清除页面上的加载要素
+    $("body").append('<div id="msg"><div id="msg_top">提示<span class="msg_close">×</span></div><div id="msg_cont">' + e + '</div><div class="msg_close" id="msg_clear">确定</div></div>');
+    $(".msg_close").click(function () {
+      $("#msg").remove();
+    });
+    return false;
+  }
+  //设置layui-layer的样式，使其居中显示
+  function setLayUi(){
+    var width = $(".layui-layer").width();
+    var height = $(".layui-layer").height();
+    $(".layui-layer").css({"position":"absolute","top":"50%","left":"50%","margin-left":-(width/2)+"px","margin-top":-(height/2)+"px"});
+  }
+  //获取配置文件的ip地址
+  function getIp() {
+    var locationIp = null;
+    $.ajax({
+      url: './config.xml',
+      type: "get",
+      async: false,
+      dataType: "xml",
+      contentType: "application/x-www-form-urlencoded; charset=utf-8",
+      success: function (data) {
+        var url = data.getElementsByTagName("locationurlindex")[0].textContent;//兼容IE浏览器与主流浏览器
+        locationIp = url;
+      },
+      error: function (data) {
+        alert("加载XML文档出错!");
+      }
+    });
+    return locationIp;
+  }
+  var locationIp = getIp();
+
+</script>
+</html>

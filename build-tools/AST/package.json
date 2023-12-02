@@ -9,7 +9,8 @@
     "change-env": "node ast-code/changeEnv.js",
     "comment": "node ast-code/comment.js",
     "lodash": "node ast-code/lodash.js",
-    "vue": "node ast-code/vue.js"
+    "vue": "node ast-code/vue.js",
+    "html": "node ast-code/html.js"
   },
   "keywords": [],
   "author": "",
@@ -21,6 +22,7 @@
     "@babel/traverse": "^7.23.5",
     "@babel/types": "^7.23.5",
     "@vue/compiler-sfc": "^3.3.9",
+    "htmlparser2": "^9.0.0",
     "jscodeshift": "^0.15.1",
     "lodash": "^4.17.21"
   }
