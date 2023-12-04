@@ -52,8 +52,8 @@ function generateHtml(ast) {
       if (Array.isArray(a.content)) {
         a.content = generateHtml(a.content)
       }
-      const atts = a.attrs ? Object.keys(a.attrs).map(key => `${key}="${a.attrs[key]}"`).join(' ') : ''
-      return `<${a.tag} ${atts}>${typeof a.content === 'string' ? a.content : a.content?.join('')}</${a.tag}>`
+      const atts = a.attrs ? Object.keys(a.attrs).map(key => a.attrs[key] === true ? key : `${key}="${a.attrs[key]}"`).join(' ') : ''
+      return `<${a.tag} ${atts}>${typeof a.content === 'string' ? a.content : a.content?.join('') || ''}</${a.tag}>`
     }
     return a;
   }).join('')
@@ -73,7 +73,7 @@ getTree(code).then((ast) => {
   console.log(ast)
 })
 
-const parserCode = parser(code);
+const parserCode = parser(code, { recognizeNoValueAttribute: true });
 consoleJson('html', JSON.stringify(parserCode, null, 2), 'json')
 const updateCode = updateTestContent(parserCode);
 createFile('test', generateHtml(updateCode))

@@ -53,7 +53,8 @@
                 "tag": "img",
                 "attrs": {
                   "class": "logo",
-                  "src": "img/bairong_logo.png"
+                  "src": "img/bairong_logo.png",
+                  "aria-checked": true
                 }
               },
               "\n    ",
