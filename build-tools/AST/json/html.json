@@ -1,0 +1,173 @@
+[
+  "<!DOCTYPE html>",
+  "\n",
+  {
+    "tag": "html",
+    "attrs": {
+      "lang": "en"
+    },
+    "content": [
+      "\n",
+      {
+        "tag": "head",
+        "content": [
+          "\n  ",
+          {
+            "tag": "meta",
+            "attrs": {
+              "charset": "UTF-8"
+            }
+          },
+          "\n  ",
+          {
+            "tag": "meta",
+            "attrs": {
+              "name": "viewport",
+              "content": "width=device-width, initial-scale=1.0"
+            }
+          },
+          "\n  ",
+          {
+            "tag": "title",
+            "content": [
+              "Document"
+            ]
+          },
+          "\n"
+        ]
+      },
+      "\n",
+      {
+        "tag": "body",
+        "content": [
+          "\n  ",
+          {
+            "tag": "div",
+            "attrs": {
+              "class": "layui-header",
+              "style": "display: none;"
+            },
+            "content": [
+              "\n    ",
+              {
+                "tag": "img",
+                "attrs": {
+                  "class": "logo",
+                  "src": "img/bairong_logo.png"
+                }
+              },
+              "\n    ",
+              {
+                "tag": "div",
+                "attrs": {
+                  "class": "tab_title"
+                },
+                "content": [
+                  "设备反欺诈管理平台"
+                ]
+              },
+              "\n    ",
+              {
+                "tag": "p",
+                "content": [
+                  "测试内容"
+                ]
+              },
+              "\n    ",
+              {
+                "tag": "ul",
+                "attrs": {
+                  "class": "layui-nav layui-layout-right"
+                },
+                "content": [
+                  "\n      ",
+                  {
+                    "tag": "li",
+                    "attrs": {
+                      "class": "layui-nav-item",
+                      "id": "usermsg",
+                      "title": "个人信息"
+                    },
+                    "content": [
+                      "\n        ",
+                      {
+                        "tag": "a",
+                        "content": [
+                          "\n          ",
+                          {
+                            "tag": "img",
+                            "attrs": {
+                              "src": "img/login.png",
+                              "class": "layui-nav-img"
+                            }
+                          },
+                          "\n          ",
+                          {
+                            "tag": "span",
+                            "attrs": {
+                              "id": "username"
+                            }
+                          },
+                          "\n        "
+                        ]
+                      },
+                      "\n      "
+                    ]
+                  },
+                  "\n      ",
+                  {
+                    "tag": "li",
+                    "attrs": {
+                      "class": "layui-nav-item",
+                      "id": "exitLogin",
+                      "title": "退出"
+                    },
+                    "content": [
+                      "\n        ",
+                      {
+                        "tag": "a",
+                        "content": [
+                          "\n          ",
+                          {
+                            "tag": "img",
+                            "attrs": {
+                              "src": "img/exit.png",
+                              "class": "layui-nav-img"
+                            }
+                          },
+                          "\n          退出\n        "
+                        ]
+                      },
+                      "\n      "
+                    ]
+                  },
+                  "\n    "
+                ]
+              },
+              "\n  "
+            ]
+          },
+          "\n"
+        ]
+      },
+      "\n",
+      {
+        "tag": "script",
+        "attrs": {
+          "type": "text/javascript"
+        },
+        "content": [
+          "\n  document.write(\"<scr\"+\"ipt src=\\\"layui/layui.min.js\\\"></sc\"+\"ript>\")\n  document.write(\"<scr\"+\"ipt src=\\\"js/src/jquery-3.4.0.min.js\\\"></sc\"+\"ript>\")\n  document.write(\"<scr\"+\"ipt src=\\\"js/src/vue.min.js\\\"></sc\"+\"ript>\")\n  document.write(\"<scr\"+\"ipt src=\\\"js/src/elementui.min.js\\\"></sc\"+\"ript>\")\n  document.write(\"<scr\"+\"ipt src=\\\"js/src/axios.min.js\\\"></sc\"+\"ript>\")\n  document.write(\"<scr\"+\"ipt src=\\\"layui/css/modules/common.js\\\"></sc\"+\"ript>\")\n  document.write(\"<scr\"+\"ipt src=\\\"layui/layui-xtree.min.js\\\"></sc\"+\"ript>\")\n"
+        ]
+      },
+      "\n",
+      {
+        "tag": "script",
+        "content": [
+          "\n  function alert(e) {\n    //$(\"body\").html(\"\");   //清除页面上的加载要素\n    $(\"body\").append('<div id=\"msg\"><div id=\"msg_top\">提示<span class=\"msg_close\">×</span></div><div id=\"msg_cont\">' + e + '</div><div class=\"msg_close\" id=\"msg_clear\">确定</div></div>');\n    $(\".msg_close\").click(function () {\n      $(\"#msg\").remove();\n    });\n    return false;\n  }\n  //设置layui-layer的样式，使其居中显示\n  function setLayUi(){\n    var width = $(\".layui-layer\").width();\n    var height = $(\".layui-layer\").height();\n    $(\".layui-layer\").css({\"position\":\"absolute\",\"top\":\"50%\",\"left\":\"50%\",\"margin-left\":-(width/2)+\"px\",\"margin-top\":-(height/2)+\"px\"});\n  }\n  //获取配置文件的ip地址\n  function getIp() {\n    var locationIp = null;\n    $.ajax({\n      url: './config.xml',\n      type: \"get\",\n      async: false,\n      dataType: \"xml\",\n      contentType: \"application/x-www-form-urlencoded; charset=utf-8\",\n      success: function (data) {\n        var url = data.getElementsByTagName(\"locationurlindex\")[0].textContent;//兼容IE浏览器与主流浏览器\n        locationIp = url;\n      },\n      error: function (data) {\n        alert(\"加载XML文档出错!\");\n      }\n    });\n    return locationIp;\n  }\n  var locationIp = getIp();\n\n"
+        ]
+      },
+      "\n"
+    ]
+  }
+]
