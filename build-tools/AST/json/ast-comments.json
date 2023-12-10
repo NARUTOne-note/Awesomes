@@ -6,27 +6,32 @@
   },
   {
     "comment": " 注释0",
-    "start": 44,
-    "end": 50
+    "start": 49,
+    "end": 55
   },
   {
     "comment": " 注释1",
-    "start": 267,
-    "end": 273
+    "start": 272,
+    "end": 278
   },
   {
     "comment": " 注释2",
-    "start": 300,
-    "end": 306
+    "start": 305,
+    "end": 311
   },
   {
     "comment": " 注释3",
-    "start": 370,
-    "end": 376
+    "start": 375,
+    "end": 381
   },
   {
     "comment": " @i18n-ignore",
-    "start": 380,
-    "end": 395
+    "start": 385,
+    "end": 400
+  },
+  {
+    "comment": " 模版测试",
+    "start": 419,
+    "end": 426
   }
 ]

@@ -23,7 +23,7 @@ function consoleJson (filename, res, type) {
   fs.writeFileSync(`${CONSOLE_JSON}/${filename}.${type || 'txt'}`, JSON.stringify(res, null, 2), 'utf-8')
 }
 
-consoleJson('parse', ast, 'json');
+consoleJson('comment-parse', ast, 'json');
 
 const comments = [];
 ast.comments.forEach((comment, i) => {

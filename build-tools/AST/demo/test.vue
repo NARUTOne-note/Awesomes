@@ -17,6 +17,10 @@ export default {
   mounted () {
     // 注释
     this.greeting = "Goodbye";
+    // 模版测试
+    const stm = `前缀
+    ${this.greeting}后缀
+    ${this.greeting + 1}`;
   }
 };
 </script>

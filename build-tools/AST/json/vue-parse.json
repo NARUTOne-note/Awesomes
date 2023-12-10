@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "filename": "anonymous.vue",
-    "source": "<template>\n  <div>\n    <!-- <p class=\"comment-info\">页面注释</p> -->\n  \t<p class=\"message-info\">此页面不存在</p>\n    <p class=\"message-text\">请检查您输入的网址是否正确</p>\n    <p>{{ greeting }} World!</p>\n  </div>\n</template>\n\n<script>\nexport default {\n  data () {\n    return {\n      greeting: \"Hello\"\n    };\n  },\n  mounted () {\n    // 注释\n    this.greeting = \"Goodbye\";\n  }\n};\n</script>\n\n<style scoped>\np {\n  font-size: 2em;\n  text-align: center;\n}\n</style>\n",
+    "source": "<template>\n  <div>\n    <!-- <p class=\"comment-info\">页面注释</p> -->\n  \t<p class=\"message-info\">此页面不存在</p>\n    <p class=\"message-text\">请检查您输入的网址是否正确</p>\n    <p>{{ greeting }} World!</p>\n  </div>\n</template>\n\n<script>\nexport default {\n  data () {\n    return {\n      greeting: \"Hello\"\n    };\n  },\n  mounted () {\n    // 注释\n    this.greeting = \"Goodbye\";\n    // 模版测试\n    const stm = `前缀\n    ${this.greeting}后缀\n    ${this.greeting + 1}`;\n  }\n};\n</script>\n\n<style scoped>\np {\n  font-size: 2em;\n  text-align: center;\n}\n</style>\n",
     "template": {
       "type": "template",
       "content": "\n  <div>\n    <!-- <p class=\"comment-info\">页面注释</p> -->\n  \t<p class=\"message-info\">此页面不存在</p>\n    <p class=\"message-text\">请检查您输入的网址是否正确</p>\n    <p>{{ greeting }} World!</p>\n  </div>\n",
@@ -436,15 +436,15 @@
         "file": "anonymous.vue",
         "sourceRoot": "",
         "sourcesContent": [
-          "<template>\n  <div>\n    <!-- <p class=\"comment-info\">页面注释</p> -->\n  \t<p class=\"message-info\">此页面不存在</p>\n    <p class=\"message-text\">请检查您输入的网址是否正确</p>\n    <p>{{ greeting }} World!</p>\n  </div>\n</template>\n\n<script>\nexport default {\n  data () {\n    return {\n      greeting: \"Hello\"\n    };\n  },\n  mounted () {\n    // 注释\n    this.greeting = \"Goodbye\";\n  }\n};\n</script>\n\n<style scoped>\np {\n  font-size: 2em;\n  text-align: center;\n}\n</style>\n"
+          "<template>\n  <div>\n    <!-- <p class=\"comment-info\">页面注释</p> -->\n  \t<p class=\"message-info\">此页面不存在</p>\n    <p class=\"message-text\">请检查您输入的网址是否正确</p>\n    <p>{{ greeting }} World!</p>\n  </div>\n</template>\n\n<script>\nexport default {\n  data () {\n    return {\n      greeting: \"Hello\"\n    };\n  },\n  mounted () {\n    // 注释\n    this.greeting = \"Goodbye\";\n    // 模版测试\n    const stm = `前缀\n    ${this.greeting}后缀\n    ${this.greeting + 1}`;\n  }\n};\n</script>\n\n<style scoped>\np {\n  font-size: 2em;\n  text-align: center;\n}\n</style>\n"
         ]
       }
     },
     "script": {
       "type": "script",
-      "content": "\nexport default {\n  data () {\n    return {\n      greeting: \"Hello\"\n    };\n  },\n  mounted () {\n    // 注释\n    this.greeting = \"Goodbye\";\n  }\n};\n",
+      "content": "\nexport default {\n  data () {\n    return {\n      greeting: \"Hello\"\n    };\n  },\n  mounted () {\n    // 注释\n    this.greeting = \"Goodbye\";\n    // 模版测试\n    const stm = `前缀\n    ${this.greeting}后缀\n    ${this.greeting + 1}`;\n  }\n};\n",
       "loc": {
-        "source": "\nexport default {\n  data () {\n    return {\n      greeting: \"Hello\"\n    };\n  },\n  mounted () {\n    // 注释\n    this.greeting = \"Goodbye\";\n  }\n};\n",
+        "source": "\nexport default {\n  data () {\n    return {\n      greeting: \"Hello\"\n    };\n  },\n  mounted () {\n    // 注释\n    this.greeting = \"Goodbye\";\n    // 模版测试\n    const stm = `前缀\n    ${this.greeting}后缀\n    ${this.greeting + 1}`;\n  }\n};\n",
         "start": {
           "column": 9,
           "line": 10,
@@ -452,8 +452,8 @@
         },
         "end": {
           "column": 1,
-          "line": 22,
-          "offset": 354
+          "line": 26,
+          "offset": 436
         }
       },
       "attrs": {},
@@ -463,11 +463,11 @@
           "anonymous.vue"
         ],
         "names": [],
-        "mappings": ";AAUA,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE;EACb,CAAC,CAAC,CAAC,EAAE,CAAC,EAAE;IACN,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE;MACL,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;IAClB,CAAC;EACH,CAAC;EACD,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,EAAE;IACT,CAAC,EAAE,CAAC;IACJ,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;EAC3B;AACF,CAAC",
+        "mappings": ";AAUA,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE;EACb,CAAC,CAAC,CAAC,EAAE,CAAC,EAAE;IACN,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE;MACL,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;IAClB,CAAC;EACH,CAAC;EACD,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,EAAE;IACT,CAAC,EAAE,CAAC;IACJ,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;IACzB,CAAC,EAAE,CAAC,CAAC,CAAC;IACN,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,EAAE,EAAE,CAAC,CAAC;IACd,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;IACjB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,EAAE,CAAC,CAAC,CAAC;EACvB;AACF,CAAC",
         "file": "anonymous.vue",
         "sourceRoot": "",
         "sourcesContent": [
-          "<template>\n  <div>\n    <!-- <p class=\"comment-info\">页面注释</p> -->\n  \t<p class=\"message-info\">此页面不存在</p>\n    <p class=\"message-text\">请检查您输入的网址是否正确</p>\n    <p>{{ greeting }} World!</p>\n  </div>\n</template>\n\n<script>\nexport default {\n  data () {\n    return {\n      greeting: \"Hello\"\n    };\n  },\n  mounted () {\n    // 注释\n    this.greeting = \"Goodbye\";\n  }\n};\n</script>\n\n<style scoped>\np {\n  font-size: 2em;\n  text-align: center;\n}\n</style>\n"
+          "<template>\n  <div>\n    <!-- <p class=\"comment-info\">页面注释</p> -->\n  \t<p class=\"message-info\">此页面不存在</p>\n    <p class=\"message-text\">请检查您输入的网址是否正确</p>\n    <p>{{ greeting }} World!</p>\n  </div>\n</template>\n\n<script>\nexport default {\n  data () {\n    return {\n      greeting: \"Hello\"\n    };\n  },\n  mounted () {\n    // 注释\n    this.greeting = \"Goodbye\";\n    // 模版测试\n    const stm = `前缀\n    ${this.greeting}后缀\n    ${this.greeting + 1}`;\n  }\n};\n</script>\n\n<style scoped>\np {\n  font-size: 2em;\n  text-align: center;\n}\n</style>\n"
         ]
       }
     },
@@ -480,13 +480,13 @@
           "source": "\np {\n  font-size: 2em;\n  text-align: center;\n}\n",
           "start": {
             "column": 15,
-            "line": 24,
-            "offset": 379
+            "line": 28,
+            "offset": 461
           },
           "end": {
             "column": 1,
-            "line": 29,
-            "offset": 426
+            "line": 33,
+            "offset": 508
           }
         },
         "attrs": {
@@ -499,11 +499,11 @@
             "anonymous.vue"
           ],
           "names": [],
-          "mappings": ";AAwBA,EAAE;EACA,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC;EACd,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACpB",
+          "mappings": ";AA4BA,EAAE;EACA,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC;EACd,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACpB",
           "file": "anonymous.vue",
           "sourceRoot": "",
           "sourcesContent": [
-            "<template>\n  <div>\n    <!-- <p class=\"comment-info\">页面注释</p> -->\n  \t<p class=\"message-info\">此页面不存在</p>\n    <p class=\"message-text\">请检查您输入的网址是否正确</p>\n    <p>{{ greeting }} World!</p>\n  </div>\n</template>\n\n<script>\nexport default {\n  data () {\n    return {\n      greeting: \"Hello\"\n    };\n  },\n  mounted () {\n    // 注释\n    this.greeting = \"Goodbye\";\n  }\n};\n</script>\n\n<style scoped>\np {\n  font-size: 2em;\n  text-align: center;\n}\n</style>\n"
+            "<template>\n  <div>\n    <!-- <p class=\"comment-info\">页面注释</p> -->\n  \t<p class=\"message-info\">此页面不存在</p>\n    <p class=\"message-text\">请检查您输入的网址是否正确</p>\n    <p>{{ greeting }} World!</p>\n  </div>\n</template>\n\n<script>\nexport default {\n  data () {\n    return {\n      greeting: \"Hello\"\n    };\n  },\n  mounted () {\n    // 注释\n    this.greeting = \"Goodbye\";\n    // 模版测试\n    const stm = `前缀\n    ${this.greeting}后缀\n    ${this.greeting + 1}`;\n  }\n};\n</script>\n\n<style scoped>\np {\n  font-size: 2em;\n  text-align: center;\n}\n</style>\n"
           ]
         }
       }
