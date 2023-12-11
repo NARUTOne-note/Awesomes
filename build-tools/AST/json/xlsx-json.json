@@ -1,0 +1,123 @@
+{
+  "js": {
+    "test": {
+      "comment": {
+        "**@n_xxxx_aram_xxxx_s{*}": "*\n     * @name: 定时上报异常日志，间隔15分钟\n     * @param {*} function\n     * @returns {*}",
+        "**@n_xxxx_对象：x_xxxx_s{*}": "*\n     * @name: devicemotion 事件监听，获取设备在三个轴上的加速度的对象：x、y 和 z；给出设备方向在三个方向轴上的旋转速率\n     * @returns {*}",
+        "devi_xxxx_，获取设_xxxx_运动角度": "deviceorientation事件监听，获取设备在x、y、z轴物理方向上的运动角度",
+        "varv_xxxx_nsol_xxxx_持此插件": "var vConsole = new VConsole();  //ie9不支持此插件",
+        "百融APICODE，通过百融交付人员获取": "百融APICODE，通过百融交付人员获取",
+        "请求超时时间": "Request timeout",
+        "隔离模式": "isolation mode",
+        "客户是否配置压缩和加密": "Does the customer configure compression and encryption",
+        "获取初始化的对应参数": "Obtain the corresponding parameters for initialization",
+        "对明文参数处理(明文参数，是否压缩，是否加密)": "对明文参数处理(明文参数，是否压缩，是否加密)",
+        "初始化请求获取gid": "初始化请求获取gid",
+        "存储gi_xxxx_d变量，_xxxx_候去调用": "存储gid和tokenid变量，在事件的时候去调用",
+        "ie9网络请求": "ie9网络请求",
+        "json提交": "json提交",
+        "服务器端返回数据处理": "服务器端返回数据处理",
+        "表单格式提交": "表单格式提交",
+        "xhr的_xxxx_示请求接_xxxx_求已完成": "xhr的状态从2到3再到4，分别表示请求接收，请求处理中，请求已完成"
+      },
+      "定时发送异常日志请求": "Regularly sending abnormal log requests",
+      "监听传感器事件错误": "Error in monitoring sensor events",
+      "web端信息采集": "Web based information collection",
+      "预发版本隔离模式-初始化": "Pre release version isolation mode - initialization",
+      "初始化": "initialization",
+      "登录": "login",
+      "注册": "register",
+      "借款": "loan",
+      "提现": "提现",
+      "还款": "还款",
+      "营销": "营销",
+      "自定义": "自定义",
+      "设备指纹": "设备指纹",
+      "初始化明文传参:": "初始化明文传参:",
+      "用户加密或压缩处理后的参数:": "用户加密或压缩处理后的参数:",
+      "初始化请求返回的数据格式:": "初始化请求返回的数据格式:"
+    }
+  },
+  "vue2": {
+    "base": {
+      "请输入": "Please Enter",
+      "comment": {
+        "<p>模版注释</p>": "<p>Template Comment</p>",
+        "注释": "Comment",
+        "模版测试": "模版测试"
+      },
+      "啊收到回复开始": "Ah, I received a reply. Let's start",
+      "百融云创": "Bairong YunChuang",
+      "前缀&n_xxxx_后缀&n_xxxx_;{1}": "前缀&nbsp;&nbsp;&nbsp;&nbsp;{0}后缀&nbsp;&nbsp;&nbsp;&nbsp;{1}"
+    },
+    "test": {
+      "comment": {
+        "遮罩层": "Mask",
+        "<pre_xxxx_nd:l_xxxx_ing>": "<pre-loading v-bind:isShow=\"loading\" v-bind:loadingText=\"'努力加载中'\"></pre-loading>",
+        "<h3s_xxxx_8px;_xxxx_/h3>": "<h3 style=\"margin: 18px; font-size: 18px; text-align: center;\">User Login</h3>",
+        "placeholder=\"用户名\">": "placeholder=\"username\">",
+        "plac_xxxx_码\"><_xxxx_put>": "placeholder=\"password\"></el-input>",
+        "{{登录}}": "{{login}}",
+        "用户名、token、用户权限的过期时间保持一致": "用户名、token、用户权限的过期时间保持一致",
+        "跳转至内部系统登录界面，这种方式跳转只能是路由": "跳转至内部系统登录界面，这种方式跳转只能是路由",
+        "清除本地缓存": "清除本地缓存",
+        "登录用户_xxxx_user_xxxx_载权限树": "登录用户名，用户userid,根据用户的userid查roleId,然后加载权限树",
+        "本地存储流水号": "本地存储流水号",
+        "设置百date为当前时间+1小时": "设置百date为当前时间+1小时",
+        "用户名对应的token,有效时间内": "用户名对应的token,有效时间内",
+        "对于异常报错信息重新跳转到登陆界面": "对于异常报错信息重新跳转到登陆界面",
+        "是否存在res": {
+          "data": {
+            "token为空": "是否存在res.data.token为空"
+          }
+        },
+        "从智能风控引擎登陆进来的用户": "从智能风控引擎登陆进来的用户",
+        "判断能否获取到access_token": "判断能否获取到access_token",
+        "获取access_token": "获取access_token",
+        "路由跳转": "路由跳转",
+        "没有对应的商户": "没有对应的商户"
+      },
+      "测试title": "test title",
+      "努力加载中": "Effort loading",
+      "测试文本": "test text",
+      "Copy_xxxx_rved_xxxx_954号": "Copyright © 2019Bairong Yunchuang Technology Co., Ltd.All Rights Reserved.京ICP备14032774号-2 京公网安备 11010802025954号",
+      "数据正在加载中": "Data is loading",
+      "请传入有效的token": "请传入有效的token",
+      "返回的token为空!": "返回的token为空!",
+      "暂无返回数据!": "暂无返回数据!",
+      "设备实时概览": "设备实时概览",
+      "设备实时分析": "设备实时分析",
+      "设备事件详情": "设备事件详情",
+      "详细信息": "详细信息",
+      "设备风险详情": "设备风险详情",
+      "设备威胁检测": "设备威胁检测",
+      "查看详细信息": "查看详细信息",
+      "威胁设备总览": "威胁设备总览",
+      "设备环境威胁": "设备环境威胁",
+      "黑名单设备威胁": "黑名单设备威胁",
+      "设备群控威胁": "设备群控威胁",
+      "设备行为威胁": "设备行为威胁",
+      "安装应用威胁": "安装应用威胁",
+      "高危区域分析": "高危区域分析",
+      "平台设备分析": "平台设备分析",
+      "设备总体分析": "设备总体分析",
+      "活跃设备分析": "活跃设备分析",
+      "设备环境分析": "设备环境分析",
+      "终端分析": "终端分析",
+      "机型分析": "机型分析",
+      "设备排名": "设备排名",
+      "设备关系图谱": "设备关系图谱",
+      "设备名单管理": "设备名单管理",
+      "设备白名单": "设备白名单",
+      "百融隐私政策": "百融隐私政策",
+      "系统权限管理": "系统权限管理",
+      "商户管理": "商户管理",
+      "用户管理": "用户管理",
+      "部门管理": "部门管理",
+      "授权管理": "授权管理",
+      "菜单管理": "菜单管理",
+      "日志管理": "日志管理",
+      "该用户没有对应的权限，请联系管理员分配权限!": "该用户没有对应的权限，请联系管理员分配权限!"
+    }
+  }
+}

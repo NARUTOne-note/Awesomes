@@ -10,7 +10,8 @@
     "comment": "node ast-code/comment.js",
     "lodash": "node ast-code/lodash.js",
     "vue": "node ast-code/vue.js",
-    "html": "node ast-code/html.js"
+    "html": "node ast-code/html.js",
+    "xlsx": "node ast-code/xlsx.js"
   },
   "keywords": [],
   "author": "",
@@ -23,10 +24,12 @@
     "@babel/types": "^7.23.5",
     "@vue/compiler-sfc": "^3.3.9",
     "htmlparser2": "^9.0.0",
+    "iconv-lite": "^0.6.3",
     "jscodeshift": "^0.15.1",
     "lodash": "^4.17.21",
     "node-xlsx": "^0.23.0",
     "posthtml-parser": "^0.12.0",
-    "vue-i18n": "^9.8.0"
+    "vue-i18n": "^9.8.0",
+    "xlsx": "^0.19.3"
   }
 }
