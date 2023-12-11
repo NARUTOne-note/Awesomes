@@ -3,6 +3,7 @@ const { resolve } = require('path')
 const { Buffer } =  require('buffer')
 const nodeXlsx = require('node-xlsx').default
 const iconv = require('iconv-lite');
+const XLSX = require('xlsx');
 iconv.skipDecodeWarning = true;
 
 const INPUT_CODE = resolve(process.cwd(), './demo/xlsx.json')
@@ -38,6 +39,25 @@ const buffer = nodeXlsx.build([
 createFile('xlsx-export', buffer)
 
 const sheetData = nodeXlsx.parse(INPUT_XLSX)
+// 读取Excel文件  
+const workbook = XLSX.readFile(INPUT_XLSX, { encoding: 'utf8' });
+// 获取第一个工作表  
+const worksheet = workbook.Sheets[workbook.SheetNames[0]];
+// 解析工作表内容为JSON对象数组  
+const data = XLSX.utils.sheet_to_json(worksheet);
+// 将乱码数据转换为 UTF-8 编码 
+let utf8Data = [];
+data.forEach(item => {
+  let temp = {};
+  for (let key in item) {
+    // console.log(key, item[key])
+    const ck = iconv.decode(key, 'utf8');
+    const cv = item[key] ? iconv.decode(item[key] + '', 'utf8') : ''
+    temp[ck] = cv;
+  }
+  utf8Data.push(temp);
+})
 
+consoleJson('xlsx-parse-2', utf8Data, 'json')
 consoleJson('xlsx-parse', JSON.parse(iconv.decode(JSON.stringify(sheetData), 'utf8')), 'json')
 consoleJson('xlsx-json', JSON.parse(jsonCode), 'json')
