@@ -11,7 +11,8 @@
     "lodash": "node ast-code/lodash.js",
     "vue": "node ast-code/vue.js",
     "html": "node ast-code/html.js",
-    "xlsx": "node ast-code/xlsx.js"
+    "xlsx": "node ast-code/xlsx.js",
+    "glob": "node ast-code/fastGlob.js"
   },
   "keywords": [],
   "author": "",
@@ -23,6 +24,7 @@
     "@babel/traverse": "^7.23.5",
     "@babel/types": "^7.23.5",
     "@vue/compiler-sfc": "^3.3.9",
+    "fast-glob": "^3.3.2",
     "htmlparser2": "^9.0.0",
     "iconv-lite": "^0.6.3",
     "jscodeshift": "^0.15.1",
