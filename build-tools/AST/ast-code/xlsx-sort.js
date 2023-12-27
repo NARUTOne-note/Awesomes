@@ -1,17 +1,13 @@
 const fs = require('fs')
 const { resolve } = require('path')
-const { Buffer } =  require('buffer')
 const nodeXlsx = require('node-xlsx').default
-const iconv = require('iconv-lite');
-const XLSX = require('xlsx');
-iconv.skipDecodeWarning = true;
 
-const INPUT_CODE = resolve(process.cwd(), './demo/xlsx.json')
-const INPUT_XLSX = resolve(process.cwd(), './demo/test.xlsx')
+const OUTPUT1_CODE = resolve(process.cwd(), './json/xlsx-1220.json')
+const OUTPUT2_CODE = resolve(process.cwd(), './json/xlsx-1227.json')
+const INPUT1_XLSX = resolve(process.cwd(), './demo/web-bdfp-map_1220.xlsx')
+const INPUT2_XLSX = resolve(process.cwd(), './demo/web-bdfp-map_1227.xlsx')
 const OUTPUT_FOLDER = resolve(process.cwd(), './output')
 const CONSOLE_JSON = resolve(process.cwd(), './json')
-
-const jsonCode = fs.readFileSync(`${INPUT_CODE}`, 'utf-8')
 
 function createFile (filename, code) {
   fs.writeFileSync(`${OUTPUT_FOLDER}/${filename}.xlsx`, code, 'utf-8')
@@ -21,43 +17,59 @@ function consoleJson (filename, res, type) {
   fs.writeFileSync(`${CONSOLE_JSON}/${filename}.${type || 'txt'}`, JSON.stringify(res, null, 2), 'utf-8')
 }
 
-let arrayData = [
-  ['name', 'age'],
-  ['zhangsan', 20],
-  ['lisi', 21],
-  ['wangwu', 22],
-  ['zhaoliu', 23],
-  ['sunqi', '山东高速搭嘎是否'],
-];
+const sheetData1 = nodeXlsx.parse(INPUT1_XLSX)
+const sheetData2 = nodeXlsx.parse(INPUT2_XLSX)
+consoleJson('xlsx-1220', JSON.parse(JSON.stringify(sheetData1)), 'json')
+consoleJson('xlsx-1227', JSON.parse(JSON.stringify(sheetData2)), 'json')
 
-const buffer = nodeXlsx.build([
-  {
-    name: 'sheet1',
-    data: arrayData
-  }
-], {sheetOptions: {'!cols': [{wch: 20}, {wch: 30}]}});
-createFile('xlsx-export', buffer)
+const jsonCode1 = fs.readFileSync(`${OUTPUT1_CODE}`, 'utf-8')
+const jsonCode2 = fs.readFileSync(`${OUTPUT2_CODE}`, 'utf-8')
 
-const sheetData = nodeXlsx.parse(INPUT_XLSX)
-// 读取Excel文件  
-const workbook = XLSX.readFile(INPUT_XLSX, { encoding: 'utf8' });
-// 获取第一个工作表  
-const worksheet = workbook.Sheets[workbook.SheetNames[0]];
-// 解析工作表内容为JSON对象数组  
-const data = XLSX.utils.sheet_to_json(worksheet);
-// 将乱码数据转换为 UTF-8 编码 
-let utf8Data = [];
-data.forEach(item => {
-  let temp = {};
-  for (let key in item) {
-    // console.log(key, item[key])
-    const ck = iconv.decode(key, 'utf8');
-    const cv = item[key] ? iconv.decode(item[key] + '', 'utf8') : ''
-    temp[ck] = cv;
+const xlsxData1 = jsonCode1 ? JSON.parse(jsonCode1) : []
+const xlsxData2 = jsonCode1 ? JSON.parse(jsonCode2) : []
+
+const nsheetData = xlsxData1.map((item, index) => {
+  const name = item.name;
+  const keys = item.data[0];
+  const sheets = item.data.slice(1);
+  const displayNameIndex = keys.indexOf('displayName');
+  const sheetsDisplayName = sheets.map((col) => col[displayNameIndex]);
+
+  const currentSheet = xlsxData2.find((sheet) => sheet.name === name);
+
+  if (!currentSheet) {
+    return item;
   }
-  utf8Data.push(temp);
+
+  const currentKeys = currentSheet.data[0];
+  const currentSheets = currentSheet.data.slice(1);
+  const currentDisplayNameIndex = currentKeys.indexOf('displayName');
+  const currentCnIndex = currentKeys.indexOf('zh_CN');
+  const currentEnIndex = currentKeys.indexOf('en_US');
+  const currentTwIndex = currentKeys.indexOf('zh_TW');
+  const currentSheetsObj = {};
+  currentSheets.forEach((col) => {
+    currentSheetsObj[col[currentDisplayNameIndex]] = {
+      zh_CN: col[currentCnIndex],
+      en_US: col[currentEnIndex],
+      zh_TW: col[currentTwIndex],
+    };
+  });
+
+  const result = sheetsDisplayName.map((displayName) => {
+    return [
+      displayName,
+      currentSheetsObj[displayName] ? currentSheetsObj[displayName].zh_CN : '',
+      currentSheetsObj[displayName] ? currentSheetsObj[displayName].en_US : '',
+      currentSheetsObj[displayName] ? currentSheetsObj[displayName].zh_TW : '',
+    ];
+  });
+
+  return {
+    name,
+    data: [["displayName", "zh_CN", "en_US", "zh_TW"], ...result],
+  };
 })
 
-consoleJson('xlsx-parse-2', utf8Data, 'json')
-consoleJson('xlsx-parse', JSON.parse(iconv.decode(JSON.stringify(sheetData), 'utf8')), 'json')
-consoleJson('xlsx-json', JSON.parse(jsonCode), 'json')
+const buffer = nodeXlsx.build(nsheetData, {sheetOptions: {'!cols': [{wch: 20}, {wch: 30}]}});
+createFile('web-bdfp-map_last', buffer)

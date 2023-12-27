@@ -13,7 +13,8 @@
     "html": "node ast-code/html.js",
     "xlsx": "node ast-code/xlsx.js",
     "glob": "node ast-code/fastGlob.js",
-    "md5": "node ast-code/md5.mjs"
+    "md5": "node ast-code/md5.mjs",
+    "xlsx-sort": "node ast-code/xlsx-sort.js"
   },
   "keywords": [],
   "author": "",
