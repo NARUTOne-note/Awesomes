@@ -12,7 +12,8 @@
     "vue": "node ast-code/vue.js",
     "html": "node ast-code/html.js",
     "xlsx": "node ast-code/xlsx.js",
-    "glob": "node ast-code/fastGlob.js"
+    "glob": "node ast-code/fastGlob.js",
+    "md5": "node ast-code/md5.mjs"
   },
   "keywords": [],
   "author": "",
@@ -24,6 +25,7 @@
     "@babel/traverse": "^7.23.5",
     "@babel/types": "^7.23.5",
     "@vue/compiler-sfc": "^3.3.9",
+    "blueimp-md5": "^2.19.0",
     "fast-glob": "^3.3.2",
     "htmlparser2": "^9.0.0",
     "iconv-lite": "^0.6.3",
